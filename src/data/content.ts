@@ -21,7 +21,7 @@ export const gallery: MediaItem[] = [
   {id:'function-setup',image:'/images/gallery/function-setup-ai.webp',title:'Ready for your function',category:'Traditional Functions',alt:'AI-generated illustration of a prepared digital Moi counter'},
 ];
 export const instagram: MediaItem[] = ['At the counter','Digital Moi entry','Our team','Family functions','Behind the scenes','MoiSoft moments'].map((title,i)=>({id:`instagram-${i+1}`,title,category:'Instagram',image:`/images/instagram/post-${i+1}.jpg`,postUrl:i===2?'https://www.instagram.com/p/DP51o58AZJS/':undefined,alt:`MoiSoft Instagram photograph: ${title}`}));
-export const media = {hero:'', story:'/images/story/story.jpg', video:'', videoPoster:'/images/video/poster.jpg', captions:'', app:['','','']};
+export const media = {hero:'', story:'/images/story/story.jpg', video:'/images/video/poster.mp4', videoPoster:'/images/video/poster.jpg', captions:'', app:['','','']};
 export const reviews: {name:string;location:string;functionType:string;text:string}[] = [];
 export const services = [
  ['Computerized Moi entry','கம்ப்யூட்டர் மொய் பதிவு','உங்கள் இல்ல விசேஷங்களில், மொய் விவரங்களை கணினி மூலம் பதிவு செய்ய உதவுகிறோம்.'],
