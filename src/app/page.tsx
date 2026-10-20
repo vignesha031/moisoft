@@ -32,12 +32,12 @@ export default function Home(){
  <section id="hero" className="hero">
   <div className="container hero-grid">
    <div>
-    <span className="hero-badge"><span className="pulse"/>மதுரையின் நம்பகமான கணினி மொய் சேவை · 2014 முதல்</span>
+    <span className="hero-badge"><span className="pulse"/>மதுரையின் நம்பகமான கணினி மொய் சேவை · 2019 முதல்</span>
     <h1 lang="ta"><span className="line"><span style={{animationDelay:'.05s'}}>உங்கள் வீட்டு</span></span><span className="line"><span style={{animationDelay:'.17s'}}>விசேஷத்திற்கு இனி</span></span><span className="line"><span className="gold" style={{animationDelay:'.29s'}}>Smart-ஆன மொய் கணக்கு!</span></span></h1>
     <p className="hero-english">Traditional Moi. Modern Digital Experience.</p>
-    <p className="hero-description" lang="ta">1000+ Functions அனுபவத்துடன், உங்கள் இல்ல விசேஷங்களில் Computer மூலம் மொய் பதிவு செய்து, கணக்கு விவரங்களை எளிதாக பார்க்க உதவும் MoiSoft.</p>
+    <p className="hero-description" lang="ta">8000+ விழாக்கள் | நம்பகமான சேவை | துல்லியமான கணக்குகள் | இல்ல விசேஷங்களின் மொய் பதிவுகளை எளிமையாகவும் பாதுகாப்பாகவும் கணினி மூலம் மேற்கொண்டு, ஒவ்வொரு பதிவையும் முறையாக நிர்வகிக்க உதவும் உங்கள் நம்பிக்கைக்குரிய தொழில்நுட்பத் துணை – மொய் Soft..</p>
     <div className="actions"><Enquire text="WhatsApp enquiry"/><Button variant="outline" asChild><a href={`tel:${company.phone}`}><Phone size={18}/>Call {company.displayPhone}</a></Button></div>
-    <div className="hero-stats"><div><strong><Counter value={1000}/></strong><span>Functions handled</span></div><div><strong><Counter value={10} suffix="K+"/></strong><span>App downloads</span></div><div><strong>2014</strong><span>Serving Madurai since</span></div></div>
+    <div className="hero-stats"><div><strong><Counter value={8000}/></strong><span>Functions handled</span></div><div><strong><Counter value={10} suffix="K+"/></strong><span>App downloads</span></div><div><strong>2019</strong><span>Serving Madurai since</span></div></div>
    </div>
    <CounterDemo/>
   </div>
@@ -46,7 +46,7 @@ export default function Home(){
  <div className="ribbon" aria-hidden="true"><div className="ribbon-track">{ribbon.map((t,i)=><span lang="ta" key={i}>{t}</span>)}</div></div>
 
  <section id="comparison" className="section"><div className="container">
-  <Reveal><Heading eyebrow="தொழில்நுட்ப மாற்றம்" title="மொய் நோட்டு காலம் மாறிடுச்சு!" description="Traditional handwritten notebook-ல் இருந்து digital MoiSoft முறை வரை."/></Reveal>
+  <Reveal><Heading eyebrow="தொழில்நுட்ப மாற்றம்" title="மொய் நோட்டு காலம் மாறிடுச்சு!" description=""/></Reveal>
   <Comparison/>
  </div></section>
 
@@ -65,8 +65,8 @@ export default function Home(){
  </div></section>
 
  <section id="why-us" className="section dark"><div className="container">
-  <Reveal><Heading eyebrow="ஏன் MoiSoft?" title="1000+ Functions. ஆயிரக்கணக்கான மகிழ்ச்சியான தருணங்கள்." description="உங்கள் குடும்ப விசேஷத்தில் மொய் கணக்குகளை நம்பிக்கையுடன் நிர்வகிக்க உதவுகிறோம்."/></Reveal>
-  <div className="bigstats"><div><strong><Counter value={1000}/></strong><span>Functions handled (business-supplied)</span></div><div><strong><Counter value={10} suffix="K+"/></strong><span>Android downloads on Google Play</span></div><div><strong>2014</strong><span>Serving Madurai since</span></div><div><strong>6</strong><span>Districts we serve</span></div></div>
+  <Reveal><Heading eyebrow="ஏன் MoiSoft?" title="8000+ Functions. ஆயிரக்கணக்கான மகிழ்ச்சியான தருணங்கள்." description="உங்கள் குடும்ப விசேஷத்தில் மொய் கணக்குகளை நம்பிக்கையுடன் நிர்வகிக்க உதவுகிறோம்."/></Reveal>
+  <div className="bigstats"><div><strong><Counter value={8000}/></strong><span>Functions handled (business-supplied)</span></div><div><strong><Counter value={10} suffix="K+"/></strong><span>Android downloads on Google Play</span></div><div><strong>2019</strong><span>Serving Madurai since</span></div><div><strong>6</strong><span>Districts we serve</span></div></div>
   <div className="why-grid">{whyUs.map(([ta,en,copy,icon])=>{const Icon=whyIcons[icon as keyof typeof whyIcons];return <Reveal key={en} className="why"><Icon className="why-icon" size={30} strokeWidth={1.5}/><h3 lang="ta">{ta}</h3><small>{en}</small><p lang="ta">{copy}</p></Reveal>;})}</div>
  </div></section>
 
@@ -76,7 +76,7 @@ export default function Home(){
  </div></section>
 
  <section id="gallery" className="section" style={{paddingTop:0}}><div className="container">
-  <Reveal><Heading eyebrow="விசேஷ தருணங்கள்" title="பல குடும்பங்களின் முக்கிய விசேஷங்களில் MoiSoft!" description="1000+ functions. One trusted service."/></Reveal>
+  <Reveal><Heading eyebrow="விசேஷ தருணங்கள்" title="பல குடும்பங்களின் முக்கிய விசேஷங்களில் MoiSoft!" description="8000+ functions. One trusted service."/></Reveal>
   <Gallery/>
  </div></section>
 
@@ -98,7 +98,7 @@ export default function Home(){
   <Reveal className="story-art"><Media src={media.story} alt="MoiSoft team helping with a family function" label="The people behind the service"/><div className="story-badge" lang="ta">மரபோடு இணைந்த தொழில்நுட்பம்.<small>Tradition Meets Technology</small></div></Reveal>
   <Reveal><Heading eyebrow="எங்கள் கதை" title="மொய் பாரம்பரியத்திற்கு ஒரு Digital மாற்றம்!" description="Rooted in Tradition. Powered by Technology."/>
    <p lang="ta">தமிழ்நாட்டின் பாரம்பரிய மொய் வழக்கத்தை, நவீன தொழில்நுட்பத்தின் உதவியுடன் எளிமையாக்கும் நோக்கத்துடன் MoiSoft செயல்படுகிறது.</p>
-   <p lang="ta">மதுரையை மையமாகக் கொண்டு, குடும்ப விழாக்களில் மொய் பதிவு, கணக்கு ஒழுங்குபடுத்துதல் மற்றும் Digital வசதிகளை 2014 முதல் வழங்கி வருகிறோம்.</p>
+   <p lang="ta">மதுரையை மையமாகக் கொண்டு, குடும்ப விழாக்களில் மொய் பதிவு, கணக்கு ஒழுங்குபடுத்துதல் மற்றும் Digital வசதிகளை 2019 முதல் வழங்கி வருகிறோம்.</p>
    <p style={{marginTop:24}}><a className="text-link" href="#leadership">Meet the people behind MoiSoft <ArrowRight size={18}/></a></p></Reveal>
  </div></section>
 

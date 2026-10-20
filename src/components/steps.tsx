@@ -1,12 +1,17 @@
 'use client';
 import {useRef} from 'react';
 import {motion,useScroll,useSpring,useReducedMotion} from 'motion/react';
-import {Phone,CalendarCheck,Keyboard,BookOpen} from 'lucide-react';
-const steps=[
- [Phone,'தொடர்பு கொள்ளுங்கள்','Contact MoiSoft','விசேஷ தேதி, மண்டபம் மற்றும் விருந்தினர்களின் எண்ணிக்கையை தெரிவிக்க எங்களை அழையுங்கள் அல்லது WhatsApp செய்யுங்கள்.','Phone / WhatsApp'],
- [CalendarCheck,'விவரங்களை உறுதி செய்யுங்கள்','Confirm the schedule','தேவையான லேப்டாப் கவுண்டர்கள், நேரம் மற்றும் டைப்பிஸ்ட்டுகளை எங்கள் குழு உறுதி செய்யும்.','Counter staff reserved'],
- [Keyboard,'கணினி மொய் பதிவு','Live computer entry','மண்டபத்தில் விருந்தினர் பெயர், ஊர், தொகையை உடனுக்குடன் பதிவு செய்து ரசீது அச்சிடுதல்.','Real-time tally'],
- [BookOpen,'கணக்கை பாருங்கள்','Book and app access','அச்சிட்ட புத்தகம், ரொக்கக் கணக்கு மற்றும் Android app அணுகல் உங்கள் கையில்.','Printed book + app'],
+import {Phone,CalendarCheck,Keyboard,BookOpen, ShieldCheck} from 'lucide-react';
+const steps = [
+  [Phone, 'தொடர்பு கொள்ளுங்கள்', 'Contact MoiSoft', 'விழா தேதி, மண்டபம் மற்றும் விருந்தினர்கள் விவரங்களை தெரிவிக்கவும்.', 'Phone / WhatsApp'],
+
+  [CalendarCheck, 'விவரங்களை உறுதி செய்யுங்கள்', 'Confirm the Schedule', 'தேவையான கணினிகள், நேரம் மற்றும் பணியாளர்களை உறுதி செய்வோம்.', 'Booking Confirmed'],
+
+  [Keyboard, 'கணினி மொய் பதிவு', 'Live Computer Entry', 'விருந்தினர் பெயர், ஊர் மற்றும் மொய் தொகையை உடனுக்குடன் பதிவு செய்வோம்.', 'Real-time Entry'],
+
+  [ShieldCheck, 'OTP பாதுகாப்பு சரிபார்ப்பு', 'Secure OTP Verification', 'மொய் பதிவுகளை மாற்ற OTP சரிபார்ப்பு கட்டாயம். உங்கள் கணக்குகளுக்கு கூடுதல் பாதுகாப்பு.', 'OTP Protected'],
+
+  [BookOpen, 'கணக்கை பாருங்கள்', 'Book & App Access', 'முழுமையான மொய் கணக்குகளை அச்சிட்ட புத்தகம் மற்றும் Android செயலியில் பெறலாம்.', 'Printed Book + App']
 ] as const;
 export function Steps(){
  const ref=useRef<HTMLDivElement>(null);const reduce=useReducedMotion();

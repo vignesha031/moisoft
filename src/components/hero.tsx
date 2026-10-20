@@ -1,7 +1,9 @@
 'use client';
 import {useEffect,useState} from 'react';
+import Image from 'next/image';
 import {AnimatePresence,motion,useReducedMotion} from 'motion/react';
 import {Printer,Search,ShieldCheck,Zap} from 'lucide-react';
+import {company} from '@/data/content';
 
 type Sample={id:number;name:string;place:string;amount:number};
 const pool:[string,string,number][]=[
@@ -45,13 +47,14 @@ export function CounterDemo(){
    <div className="typing-row"><Search size={16}/><span lang="ta">{reduce?'பெயர் · ஊர் · தொகை':Array.from(upcoming.name).slice(0,typed).join('')}</span>{!reduce&&<span className="caret"/>}</div>
   </div>
   <div className="printer" aria-hidden="true">
-   <div className="printer-body"><span><Printer size={14} style={{verticalAlign:'-2px',marginRight:6}}/>Thermal printer</span><i/></div>
+   <div className="printer-body"><span><Printer size={14} style={{verticalAlign:'-2px',marginRight:6}}/>Thermal print Receipt</span><i/></div>
    <span className="slot"/>
    <div className="slip-wrap"><div className="slip" key={latest.id} style={reduce?{animation:'none'}:undefined}>
-    <b>MOISOFT</b><div style={{justifyContent:'center'}}><span lang="ta">மொய் ரசீது</span></div><hr/>
+    <Image src="/logo-transparent.png" alt="" width={1807} height={351} className="slip-logo"/>
+    <div className="slip-contact"><span>{company.site.replace(/^https?:\/\//,'')}</span><span>{company.displayPhone}, +91 93847 29550</span></div><hr/>
     <div><span lang="ta">{latest.name}</span><span>₹{fmt(latest.amount)}</span></div><div><span lang="ta">{latest.place}</span><span>#{String(count).padStart(4,'0')}</span></div><hr/><div style={{justifyContent:'center'}}><span lang="ta">நன்றி</span></div>
    </div></div>
   </div>
-  <p className="demo-note">Illustrative demo · sample names and amounts</p>
+  <p className="demo-note"></p>
  </div>;
 }
