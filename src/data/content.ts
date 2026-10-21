@@ -1,41 +1,64 @@
 export const company = {
-  name: 'MoiSoft', phone: '+919944138970', displayPhone: '+91 99441 38970', whatsapp: '919944138970',
+  name: 'மொய் Soft', phone: '+919944138970', displayPhone: '+91 99441 38970', whatsapp: '919944138970',
   email: 'moisoft06@gmail.com', address: '4/449 A, Theni Main Road, Nagamalai, Madurai – 625019, Tamil Nadu.',
   maps: 'https://share.google/xvHv8orzKZMD3uji4', instagram: 'https://www.instagram.com/moi_soft_/',
   play: 'https://play.google.com/store/apps/details?id=com.moisoft1.moisoft1',
-  site: process.env.NEXT_PUBLIC_SITE_URL || 'https://moisoft.in',
+  site: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.moisoft.in',
 };
-export const navigation = [['hero', 'Home'], ['about', 'About'], ['services', 'Services'], ['how-it-works', 'How it works'], ['app', 'Mobile app'], ['faq', 'FAQ'], ['contact', 'Contact']] as const;
+
+export const navigation = [
+  ['hero', 'Home'],
+  ['about', 'About'],
+  ['services', 'Services'],
+  ['how-it-works', 'How it works'],
+  ['app', 'Mobile app'],
+  ['leadership', 'Our Leadership'],
+  ['faq', 'FAQ'],
+  ['contact', 'Contact']
+] as const;
+
 export const leadership = [
-  { name: 'P. Devi', image: '/images/leadership/devi.jpeg' },
-  { name: 'M. Mahalakshmi', image: '/images/leadership/mahalakshmi.jpeg' },
-  { name: 'G. Selvakumar', image: '/images/leadership/selvakumar.jpeg' },
+  {
+    name: 'P. Devi',
+    degree: 'B.E',
+    image: '/images/leadership/devi.jpeg'
+  },
+  {
+    name: 'M. Mahalakshmi',
+    degree: 'B.A',
+    image: '/images/leadership/mahalakshmi.png'
+  },
+  {
+    name: 'G. Selvakumar',
+    degree: 'M.Com, M.Phil',
+    image: '/images/leadership/selvakumar.png'
+  }
 ];
 export type MediaItem = { id: string; title: string; category: string; image?: string; alt: string; postUrl?: string; location?: string };
 export const gallery: MediaItem[] = [
-  { id: 'wedding-counter', image: '/images/gallery/wedding-counter-ai.webp', title: 'Wedding Moi counter', category: 'Weddings', alt: 'AI-generated illustration of a Tamil wedding Moi counter' },
+  { id: 'wedding-counter', image: '/images/gallery/wedding-counter-ai.webp', title: 'Wedding மொய்  counter', category: 'Weddings', alt: 'AI-generated illustration of a Tamil wedding மொய்  counter' },
   { id: 'family-moments', image: '/images/gallery/family-moments-ai.webp', title: 'Family celebrations', category: 'Traditional Functions', alt: 'AI-generated illustration of a Tamil family celebration' },
   { id: 'ear-piercing', image: '/images/gallery/ear-piercing-ai.webp', title: 'A special milestone', category: 'Ear-Piercing', alt: 'AI-generated illustration of a family after an ear-piercing celebration' },
   { id: 'housewarming', image: '/images/gallery/housewarming-ai.webp', title: 'New beginnings', category: 'Housewarming', alt: 'AI-generated illustration of a Tamil housewarming' },
-  { id: 'team-at-work', image: '/images/gallery/team-at-work-ai.webp', title: 'The team at work', category: 'Weddings', alt: 'AI-generated illustration of staff recording Moi entries' },
-  { id: 'function-setup', image: '/images/gallery/function-setup-ai.webp', title: 'Ready for your function', category: 'Traditional Functions', alt: 'AI-generated illustration of a prepared digital Moi counter' },
+  { id: 'team-at-work', image: '/images/gallery/team-at-work-ai.webp', title: 'The team at work', category: 'Weddings', alt: 'AI-generated illustration of staff recording மொய்  entries' },
+  { id: 'function-setup', image: '/images/gallery/function-setup-ai.webp', title: 'Ready for your function', category: 'Traditional Functions', alt: 'AI-generated illustration of a prepared digital மொய்  counter' },
 ];
-export const instagram: MediaItem[] = ['At the counter', 'Digital Moi entry', 'Our team', 'Family functions', 'Behind the scenes', 'MoiSoft moments'].map((title, i) => ({ id: `instagram-${i + 1}`, title, category: 'Instagram', image: `/images/instagram/post-${i + 1}.jpg`, postUrl: i === 2 ? 'https://www.instagram.com/p/DP51o58AZJS/' : undefined, alt: `MoiSoft Instagram photograph: ${title}` }));
-export const media = { hero: '', story: '/images/story/story.jpg', video: '/images/video/poster.mp4', videoPoster: '/images/video/poster.jpg', captions: '', app: ['', '', ''] };
+export const instagram: MediaItem[] = ['At the counter', 'Digital மொய்  entry', 'Our team', 'Family functions', 'Behind the scenes', 'மொய் Soft moments'].map((title, i) => ({ id: `instagram-${i + 1}`, title, category: 'Instagram', image: `/images/instagram/post-${i + 1}.jpg`, postUrl: i === 2 ? 'https://www.instagram.com/p/DP51o58AZJS/' : undefined, alt: `மொய் Soft Instagram photograph: ${title}` }));
+export const media = { hero: '', story: '/images/story/story.jpg', video: '/images/video/poster.mp4', videoPoster: '', captions: '', app: ['', '', ''] };
 export const reviews: { name: string; location: string; functionType: string; text: string }[] = [];
 export const services = [
-  ['Computerized Moi entry', 'கம்ப்யூட்டர் மொய் பதிவு', 'உங்கள் இல்ல விசேஷங்களில், மொய் விவரங்களை கணினி மூலம் பதிவு செய்ய உதவுகிறோம்.'],
+  ['Computerized மொய்  entry', 'கம்ப்யூட்டர் மொய் பதிவு', 'உங்கள் இல்ல விசேஷங்களில், மொய் விவரங்களை கணினி மூலம் பதிவு செய்ய உதவுகிறோம்.'],
   ['Old notebook management', 'பழைய நோட்டுக்கு புதிய ஒழுங்கு', 'கையில் எழுதிய மொய் விவரங்களை ஊர் வாரியாக ஒழுங்குபடுத்தலாம்.'],
   ['Village & route sorting', 'ஊர் வாரியாக. வழி வாரியாக.', 'பத்திரிக்கை கொடுக்க வசதியாக, ஊர் விவரங்களை Route வாரியாக பிரிக்கலாம்.'],
-  ['Moi reports & records', 'கணக்குகள் ஒரே இடத்தில்', 'செய்த மொய், வாங்கிய மொய் விவரங்களை தெளிவாகப் பார்க்க உதவும் பதிவுகள்.'],
+  ['மொய்  reports & records', 'கணக்குகள் ஒரே இடத்தில்', 'செய்த மொய், வாங்கிய மொய் விவரங்களை தெளிவாகப் பார்க்க உதவும் பதிவுகள்.'],
   ['Invitation printing', 'விசேஷத்தின் முதல் அழைப்பு', 'உங்கள் தேவைக்கேற்ற பத்திரிக்கை அச்சிடுதல் பற்றி எங்களிடம் கேளுங்கள்.'],
 ];
 export const faqs = [
-  ['MoiSoft என்ன சேவை வழங்குகிறது?', 'திருமணம் மற்றும் குடும்ப விசேஷங்களுக்கு கம்ப்யூட்டர் மொய் பதிவு, பழைய நோட்டு மேலாண்மை, ஊர் வாரியான பட்டியல் மற்றும் பத்திரிக்கை அச்சிடுதல் சேவைகள் வழங்கப்படுகின்றன.'],
-  ['விசேஷ இடத்திற்கு வந்து மொய் பதிவு செய்வீர்களா?', 'உங்கள் தேதி, இடம் மற்றும் தேவைகளை WhatsApp-ல் பகிருங்கள். நேரில் சேவை வழங்குவதற்கான ஏற்பாடு மற்றும் availability-ஐ MoiSoft குழு உறுதி செய்யும்.'],
+  ['மொய் Soft என்ன சேவை வழங்குகிறது?', 'திருமணம் மற்றும் குடும்ப விசேஷங்களுக்கு கம்ப்யூட்டர் மொய் பதிவு, பழைய நோட்டு மேலாண்மை, ஊர் வாரியான பட்டியல் மற்றும் பத்திரிக்கை அச்சிடுதல் சேவைகள் வழங்கப்படுகின்றன.'],
+  ['விசேஷ இடத்திற்கு வந்து மொய் பதிவு செய்வீர்களா?', 'உங்கள் தேதி, இடம் மற்றும் தேவைகளை WhatsApp-ல் பகிருங்கள். நேரில் சேவை வழங்குவதற்கான ஏற்பாடு மற்றும் availability-ஐ மொய் Soft குழு உறுதி செய்யும்.'],
   ['பழைய மொய் நோட்டுகளை ஒழுங்குபடுத்த முடியுமா?', 'ஆம். கையில் எழுதிய மொய் பதிவுகளை ஊர் வாரியாக ஒழுங்குபடுத்தும் சேவை உள்ளது. நோட்டுகளின் விவரங்களை எங்களிடம் பகிர்ந்து ஆலோசிக்கலாம்.'],
-  ['Android app எங்கு கிடைக்கும்?', 'இந்தப் பக்கத்தில் உள்ள Google Play இணைப்பில் MoiSoft Android app-ஐ பார்க்கலாம். பயன்பாடு மற்றும் உங்கள் பதிவுகளுக்கான அணுகல் குறித்து குழுவிடம் கேளுங்கள்.'],
-  ['சேவைக் கட்டணம் எவ்வளவு?', 'விசேஷ வகை, தேதி, இடம் மற்றும் தேவைக்கு ஏற்ப கட்டண விவரங்களை MoiSoft குழு தெரிவிக்கும். Enquiry அனுப்புவது booking உறுதி செய்ததாகாது.'],
+  ['Android app எங்கு கிடைக்கும்?', 'இந்தப் பக்கத்தில் உள்ள Google Play இணைப்பில் மொய் Soft Android app-ஐ பார்க்கலாம். பயன்பாடு மற்றும் உங்கள் பதிவுகளுக்கான அணுகல் குறித்து குழுவிடம் கேளுங்கள்.'],
+  ['சேவைக் கட்டணம் எவ்வளவு?', 'விசேஷ வகை, தேதி, இடம் மற்றும் தேவைக்கு ஏற்ப கட்டண விவரங்களை மொய் Soft குழு தெரிவிக்கும். Enquiry அனுப்புவது booking உறுதி செய்ததாகாது.'],
   ['எந்த ஊர்களில் சேவை கிடைக்கும்?', 'மதுரை, தேனி, திண்டுக்கல், விருதுநகர், சிவகங்கை, ராமநாதபுரம் பகுதிகளுக்கான தேவைகளை கேட்கலாம். ஒவ்வொரு இடத்திற்கும் சேவை availability-ஐ குழு உறுதி செய்ய வேண்டும்.'],
 ];
 
@@ -77,5 +100,110 @@ export const whyUs = [
   ['Digital வசதி', 'Digital access', 'அச்சிட்ட புத்தகம் மட்டுமின்றி, Android app மூலம் எப்போது வேண்டுமானாலும் கணக்குகளைப் பார்க்கலாம்.', 'Smartphone'],
   ['நேரடி ஆதரவு', 'On-site support', 'விசேஷ இடத்திலேயே ஒருங்கிணைப்பாளர்கள் மற்றும் கணினி பணியாளர்கள்.', 'Users'],
 ] as const;
-export const appFeatures = [['அனைத்து மொய் விவரங்கள்', 'View all Moi details', 'ListChecks'], ['உறவினர் பெயர் தேடல்', 'Instant relative search', 'Search'], ['Cloud backup', 'Records kept safe', 'CloudUpload'], ['தமிழ் இடைமுகம்', 'Tamil-friendly interface', 'Languages']] as const;
+export const appFeatures = [['அனைத்து மொய் விவரங்கள்', 'View all மொய்  details', 'ListChecks'], ['உறவினர் பெயர் தேடல்', 'Instant relative search', 'Search'], ['Cloud backup', 'Records kept safe', 'CloudUpload'], ['தமிழ் இடைமுகம்', 'Tamil-friendly interface', 'Languages']] as const;
 export const areas = ['Madurai', 'Theni', 'Dindigul', 'Virudhunagar', 'Sivagangai', 'Ramanathapuram'] as const;
+
+/**
+ * Franchise partners shown in the "Franchise network" section.
+ *
+ * To publish a card's phone numbers, fill both pairs as [tel, display]:
+ *   contact1: ['+919876543210', '+91 98765 43210']
+ *   contact2: ['+918765432109', '+91 87654 32109']
+ * `tel` must have no spaces (used in the href); `display` is what visitors see.
+ * A card with no contact1/contact2 renders as a placeholder and shows no links.
+ */
+
+export type Franchise = {
+  id: string;
+  name: string;
+  area: string;
+  manager: string;
+  contact1?: [tel: string, display: string];
+  contact2?: [tel: string, display: string];
+};
+
+
+
+
+
+export const franchises: Franchise[] = [
+  {
+    id: 'franchise-1',
+    name: 'MR.MK',
+    area: 'கட்டக்கருப்பன்பட்டி',
+    manager: 'Gowtham',
+    contact1: ['+919751967137', '+91 97519 67137']
+  },
+  {
+    id: 'franchise-2',
+    name: 'Smart செல்வா மொய் Soft',
+    area: 'கருப்பாயூரணி (பாண்டிகோவில்)',
+    manager: 'Gowtham',
+    contact1: ['+917094909462', '+91 70949 09462'],
+    contact2: ['+916385470047', '+91 63854 70047']
+  },
+  {
+    id: 'franchise-3',
+    name: 'ஆதிசிவன் மொய் Soft',
+    area: 'உசிலம்பட்டி',
+    manager: 'Gowtham',
+    contact1: ['+919159842273', '+91 91598 42273'],
+    contact2: ['+919585324266', '+91 95853 24266']
+  },
+  {
+    id: 'franchise-4',
+    name: 'ஏலம் மணக்கும் போடி',
+    area: 'போடி',
+    manager: 'Gowtham',
+    contact1: ['+918807646566', '+91 88076 46566']
+  },
+  {
+    id: 'franchise-5',
+    name: 'கருமாத்தூர் லேசர்',
+    area: 'கருமாத்தூர்',
+    manager: 'Gowtham',
+    contact1: ['+919843939705', '+91 98439 39705'],
+    contact2: ['+917708779821', '+91 77087 79821']
+  },
+  {
+    id: 'franchise-6',
+    name: 'காரியாபட்டி',
+    area: 'காரியாபட்டி',
+    manager: 'Gowtham',
+    contact1: ['+918610576031', '+91 86105 76031'],
+    contact2: ['+918838060904', '+91 88380 60904']
+  },
+  {
+    id: 'franchise-7',
+    name: 'சோழன் மொய் Soft',
+    area: 'அணைப்பட்டி',
+    manager: 'Gowtham',
+    contact1: ['+917200851024', '+91 72008 51024'],
+    contact2: ['+917200861024', '+91 72008 61024']
+  },
+  {
+    id: 'franchise-8',
+    name: 'நண்பன் மொய் Soft',
+    area: 'விக்கிரமங்கலம்',
+    manager: 'Gowtham',
+    contact1: ['+919597992002', '+91 95979 92002'],
+    contact2: ['+919751062471', '+91 97510 62471']
+  },
+  {
+    id: 'franchise-9',
+    name: 'மம்பட்டிபட்டி ஜனா மொய் Soft',
+    area: 'மம்பட்டிபட்டி',
+    manager: 'Gowtham',
+    contact1: ['+919787832191', '+91 97878 32191'],
+    contact2: ['+919445978910', '+91 94459 78910']
+  },
+  {
+    id: 'franchise-10',
+    name: 'ஸ்ரீ அம்மன் மொய் Soft',
+    area: 'விருவீடு',
+    manager: 'Gowtham',
+    contact1: ['+918807486654', '+91 88074 86654'],
+    contact2: ['+919585321025', '+91 95853 21025']
+  }
+];
+
