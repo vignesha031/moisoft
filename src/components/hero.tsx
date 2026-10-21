@@ -6,10 +6,22 @@ import { Printer, Search, ShieldCheck, Zap } from 'lucide-react';
 import { company } from '@/data/content';
 
 type Sample = { id: number; name: string; place: string; amount: number };
+
+
 const pool: [string, string, number][] = [
-    ['க. முத்து', 'மதுரை', 2001], ['ராஜா & குடும்பம்', 'தேனி', 5001], ['செல்வராஜ்', 'திண்டுக்கல்', 1001], ['மீனா அம்மாள்', 'சிவகங்கை', 501],
-    ['சரவணன்', 'விருதுநகர்', 1500], ['லட்சுமி', 'நாகமலை', 3001], ['முருகேசன்', 'மதுரை', 2501], ['கலா', 'தேனி', 1001],
+    ['க. முருகன் – மீனாட்சி', 'மதுரை', 2001],
+    ['ரா. செல்வம் – லட்சுமி', 'தேனி', 5001],
+    ['ச. ராஜேஷ் – பிரியா', 'திண்டுக்கல்', 1001],
+    ['மு. கார்த்திக் – கவிதா', 'சிவகங்கை', 501],
+    ['சத்யா – சுபா', 'திருப்பத்தூர்', 5001],
+    ['மகேஷ் – அபி', 'இராமநாதபுரம்', 2001],
+    ['ப. சரவணன் – சுமதி', 'விருதுநகர்', 1501],
+    ['கே. முத்து – வள்ளி', 'நாகமலை', 3001],
+    ['எஸ். பாண்டியன் – செல்வி', 'உசிலம்பட்டி', 2501],
+    ['ஆர். கண்ணன் – மாலதி', 'சோழவந்தான்', 1001],
 ];
+
+
 const make = (i: number): Sample => { const [name, place, amount] = pool[i % pool.length]; return { id: i, name, place, amount }; };
 const fmt = (n: number) => n.toLocaleString('en-IN');
 const START_TOTAL = 845500, START_COUNT = 420;
@@ -33,7 +45,7 @@ export function CounterDemo() {
     return <div className="demo" role="img" aria-label="Illustrative demo of the மொய் Soft counter: names are typed in, the running total grows and a thermal slip is printed for each guest.">
         <div className="demo-glow" aria-hidden="true" />
         <div className="float-chip chip-a" aria-hidden="true"><ShieldCheck size={18} />Checked totals</div>
-        <div className="float-chip chip-b" aria-hidden="true"><Zap size={18} />Slip in seconds</div>
+        <div className="float-chip chip-b" aria-hidden="true"><Zap size={12} />Slip in seconds</div>
         <div className="screen" aria-hidden="true">
             <div className="screen-bar"><i /><i /><i /><span>மொய் Soft · Live counter</span><em><span className="pulse" />Live</em></div>
             <div className="screen-total"><div><small>மொத்த மொய் வரவு</small><strong>₹ {fmt(total)}</strong></div><span className="screen-count">{count} slips</span></div>

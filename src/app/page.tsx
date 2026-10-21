@@ -3,7 +3,7 @@ import { existsSync } from 'node:fs';
 import path from 'node:path';
 
 import {
-  ArrowUpRight, ArrowRight, MapPin, Mail, MessageCircle,
+  ArrowUpRight, ArrowRight, MapPin, Mail,
   Phone, Instagram, Check, Film, Play, Zap, Calculator,
   ListTree, Award, Smartphone, Users, ListChecks, Search,
   CloudUpload, Languages, Monitor, BookOpen, FileText,
@@ -16,6 +16,7 @@ import {
 } from '@/data/content';
 
 import { whatsappUrl } from '@/lib/whatsapp';
+import { WhatsAppCTA } from '@/components/whatsapp-cta';
 import { Navbar, Brand, FloatingContact } from '@/components/navigation';
 import { Reveal, Media, Counter, ScrollProgress } from '@/components/shared';
 import { Button } from '@/components/ui';
@@ -25,6 +26,12 @@ import { Steps } from '@/components/steps';
 import { AppPhone } from '@/components/app-phone';
 import { Gallery } from '@/components/gallery';
 import { BookingForm } from '@/components/booking';
+import { FranchiseEnquiryForm } from '@/components/franchise-enquiry';
+import {
+  FranchiseNetworkTop,
+  FranchiseNetworkBottom,
+  FranchiseCardAccent
+} from '@/components/franchise-network';
 import { FAQ } from '@/components/faq';
 import { Analytics } from '@/components/analytics';
 
@@ -52,10 +59,7 @@ function Heading({
 function Enquire({ text = 'WhatsApp enquiry' }: { text?: string }) {
   return (
     <Button asChild>
-      <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer">
-        <MessageCircle size={18} />
-        {text}
-      </a>
+      <WhatsAppCTA href={whatsappUrl()}>{text}</WhatsAppCTA>
     </Button>
   );
 }
@@ -226,14 +230,9 @@ export default function Home() {
 
                     {print && (
                       <div className="cta-row">
-                        <a
-                          className="text-link"
-                          href={whatsappUrl()}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Get a printing quote <ArrowUpRight size={16} />
-                        </a>
+                        <WhatsAppCTA className="text-link" href={whatsappUrl()}>
+                          Get a printing quote
+                        </WhatsAppCTA>
                       </div>
                     )}
                   </Reveal>
@@ -248,7 +247,7 @@ export default function Home() {
           <div className="container">
             <Reveal>
               <Heading
-                eyebrow="எளிய 4 படிகள்"
+                eyebrow="எளிய 5 படிகள்"
                 title="உங்கள் Function-க்கு மொய் Soft எப்படி உதவுகிறது?"
                 description="முதல் அழைப்பில் இருந்து, விசேஷம் முடிந்த அன்றே கணக்கு ஒப்படைப்பு வரை."
               />
@@ -405,14 +404,9 @@ export default function Home() {
                 கணினி மொய் பதிவு எப்படி நடைபெறுகிறது என்பதை அறிய எங்களை தொடர்பு கொள்ளுங்கள்.
               </p>
               <p style={{ marginTop: 22 }}>
-                <a
-                  className="text-link"
-                  href={whatsappUrl()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Ask for a demonstration <ArrowUpRight size={18} />
-                </a>
+                <WhatsAppCTA className="text-link" href={whatsappUrl()}>
+                  Ask for a demonstration
+                </WhatsAppCTA>
               </p>
             </Reveal>
 
@@ -634,31 +628,34 @@ export default function Home() {
         <section className="section tight areas">
           <div className="container areas-inner">
             <div className="areas-intro">
-              <span className="eyebrow">சேவைப் பகுதிகள்</span>
-              <h2>Madurai & All Over Tamil Nadu</h2>
+              <span className="eyebrow">எங்கள் கிளைகள்</span>
+              <h2>Madurai & Surrounding Regions</h2>
               <p lang="ta" style={{ marginTop: 12 }}>
-                உங்கள் ஊரிலும் மொய் Soft சேவை — availability-ஐ கேட்டறியுங்கள்.
+                மதுரை மற்றும் சுற்றுவட்டாரப் பகுதிகளில் 10+ மொய் Soft கிளைகள் மூலம் உங்கள் விசேஷங்களுக்கு சேவை வழங்குகிறோம்.
               </p>
               <p style={{ marginTop: 22 }}>
-                <a
-                  className="text-link"
-                  href={whatsappUrl()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Check availability on WhatsApp <ArrowUpRight size={18} />
-                </a>
+                <WhatsAppCTA className="text-link" href={whatsappUrl()}>
+                  Check availability on WhatsApp
+                </WhatsAppCTA>
               </p>
             </div>
+
 
             <div className="franchise-grid">
               {franchises.map(f => (
                 <article className="franchise-card" key={f.id}>
                   <h3 className="franchise-name">{f.name}</h3>
+
                   <p className="franchise-area">
                     <MapPin size={13} />
                     {f.area}
                   </p>
+
+                  <p className="franchise-manager">
+                    <span>Manager:</span>
+                    <strong>{f.manager ?? 'Gowtham'}</strong>
+                  </p>
+
                   <div className="franchise-phones">
                     {f.contact1 || f.contact2 ? (
                       <>
@@ -676,12 +673,72 @@ export default function Home() {
                         )}
                       </>
                     ) : (
-                      <span className="franchise-pending">Contact details coming soon</span>
+                      <span className="franchise-pending">
+                        Contact details coming soon
+                      </span>
                     )}
                   </div>
                 </article>
               ))}
             </div>
+          </div>
+        </section>
+
+
+        {/* FRANCHISE PARTNERSHIP */}
+        <section id="franchise-enquiry" className="section franchise-enquiry">
+          <div className="fe-network fe-network-tr">
+            <FranchiseNetworkTop />
+          </div>
+          <div className="fe-network fe-network-bl">
+            <FranchiseNetworkBottom />
+          </div>
+
+          <div className="container fe-inner">
+            <Reveal className="fe-showcase">
+              <span className="fe-eyebrow">மொய்SOFT PARTNER NETWORK</span>
+              <h2 className="fe-title">
+                <span className="fe-title-line">Grow Your Business.</span>
+                <span className="fe-title-line">
+                  Partner With <em>மொய்Soft</em>.
+                </span>
+              </h2>
+              <p className="fe-desc">
+                Become part of our growing franchise network and bring professional computerised
+                மொய் services to your region.
+              </p>
+              <p className="fe-statement">Connected by trust. Growing together.</p>
+
+              <ul className="fe-highlights">
+                <li>
+                  <strong>{franchises.length}</strong>
+                  <span>Franchise branches</span>
+                </li>
+                <li>
+                  <strong>Tamil Nadu</strong>
+                  <span>Regional network presence</span>
+                </li>
+              </ul>
+
+              <ol className="fe-journey" aria-label="Partnership journey">
+                {['Enquire', 'Discuss', 'Partner'].map((step, i) => (
+                  <li key={step}>
+                    <span className="fe-journey-dot" aria-hidden="true" />
+                    {step}
+                    {i < 2 && <span className="fe-journey-line" aria-hidden="true" />}
+                  </li>
+                ))}
+              </ol>
+            </Reveal>
+
+            <Reveal delay={0.1} className="fe-form-shell">
+              <div className="fe-card">
+                <span className="fe-card-accent" aria-hidden="true">
+                  <FranchiseCardAccent />
+                </span>
+                <FranchiseEnquiryForm />
+              </div>
+            </Reveal>
           </div>
         </section>
 
@@ -740,6 +797,7 @@ export default function Home() {
               />
 
               <address>
+                <strong>Head Office </strong>
                 <strong>மொய் Soft · Madurai</strong>
                 <p>{company.address}</p>
               </address>

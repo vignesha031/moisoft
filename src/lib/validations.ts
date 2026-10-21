@@ -8,3 +8,20 @@ export const enquirySchema = z.object({
  location:z.string().trim().min(2,'விசேஷம் நடைபெறும் இடத்தை உள்ளிடவும்.').max(200),
 });
 export type EnquiryValues = z.infer<typeof enquirySchema>;
+
+export function normalizeIndianMobile(value: string) {
+  const digits = value.replace(/[^\d]/g, '');
+  if (digits.length === 12 && digits.startsWith('91')) return digits.slice(2);
+  if (digits.length === 11 && digits.startsWith('0')) return digits.slice(1);
+  return digits;
+}
+export function isIndianMobile(value: string) {
+  return /^[6-9]\d{9}$/.test(normalizeIndianMobile(value));
+}
+export const franchiseEnquirySchema = z.object({
+  name: z.string().trim().min(2, 'Please enter your full name.').max(80, 'Name must be 80 characters or less.'),
+  phone: z.string().trim().refine(isIndianMobile, 'Enter a valid 10-digit Indian mobile number.'),
+  location: z.string().trim().min(2, 'Please enter your preferred franchise location.').max(120, 'Location must be 120 characters or less.'),
+  message: z.string().trim().max(500, 'Message must be 500 characters or less.').optional(),
+});
+export type FranchiseEnquiryValues = z.infer<typeof franchiseEnquirySchema>;

@@ -2370,6 +2370,365 @@ section[id] {
   }
 }
 
+/* ───────── Franchise partnership network ───────── */
+.section.franchise-enquiry {
+  --fe-forest: #102f27;
+  --fe-green: #173e32;
+  --fe-gold: #b58b43;
+  --fe-gold-2: #d9b878;
+  --fe-ivory: #f8f3e8;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 104px 0;
+  background: linear-gradient(158deg, var(--fe-green) 0%, var(--fe-forest) 64%)
+}
+
+.fe-network {
+  position: absolute;
+  z-index: 0;
+  line-height: 0;
+  pointer-events: none;
+  user-select: none
+}
+
+.fe-network svg {
+  display: block;
+  width: 100%;
+  height: auto
+}
+
+.fe-network-tr {
+  top: 0;
+  right: 0;
+  width: min(640px, 72%);
+  -webkit-mask-image: radial-gradient(130% 125% at 100% 0%, #000 30%, transparent 78%);
+  mask-image: radial-gradient(130% 125% at 100% 0%, #000 30%, transparent 78%)
+}
+
+.fe-network-bl {
+  bottom: 0;
+  left: 0;
+  width: min(360px, 54%);
+  opacity: .72;
+  -webkit-mask-image: radial-gradient(120% 120% at 0% 100%, #000 24%, transparent 74%);
+  mask-image: radial-gradient(120% 120% at 0% 100%, #000 24%, transparent 74%)
+}
+
+.fe-node-glow circle {
+  animation: feNodeGlow 10s ease-in-out infinite
+}
+
+.fe-node-glow circle:nth-child(2) {
+  animation-delay: -3.5s
+}
+
+.fe-node-glow circle:nth-child(3) {
+  animation-delay: -6.5s
+}
+
+.fe-node-glow circle:nth-child(4) {
+  animation-delay: -5s
+}
+
+.fe-line-shimmer {
+  animation: feLineShimmer 13s ease-in-out infinite
+}
+
+@keyframes feNodeGlow {
+
+  0%,
+  100% {
+    opacity: .45
+  }
+
+  50% {
+    opacity: 1
+  }
+}
+
+@keyframes feLineShimmer {
+
+  0%,
+  100% {
+    opacity: .55
+  }
+
+  50% {
+    opacity: 1
+  }
+}
+
+.fe-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 44px;
+  align-items: center
+}
+
+.fe-showcase {
+  position: relative;
+  z-index: 1
+}
+
+.fe-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--fe-gold-2);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .24em;
+  text-transform: uppercase
+}
+
+.fe-eyebrow::before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--fe-gold))
+}
+
+.fe-title {
+  margin-top: 18px;
+  color: #fff;
+  font-size: clamp(1.75rem, 3.3vw, 3rem);
+  font-weight: 800;
+  line-height: 1.16;
+  letter-spacing: -.02em
+}
+
+.fe-title-line {
+  display: block
+}
+
+.fe-title em {
+  font-style: normal;
+  color: var(--fe-gold-2)
+}
+
+.fe-desc {
+  max-width: 44ch;
+  margin-top: 20px;
+  color: rgba(248, 243, 232, .74);
+  font-size: 1.02rem;
+  line-height: 1.72
+}
+
+.fe-statement {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+  color: var(--fe-ivory);
+  font-size: .95rem;
+  font-weight: 600
+}
+
+.fe-statement::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--fe-gold-2);
+  box-shadow: 0 0 0 4px rgba(217, 184, 120, .14);
+  flex: none
+}
+
+.fe-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 420px;
+  margin-top: 34px
+}
+
+.fe-highlights li {
+  padding: 16px 18px;
+  border: 1px solid rgba(181, 139, 67, .26);
+  border-radius: 14px;
+  background: rgba(248, 243, 232, .035)
+}
+
+.fe-highlights strong {
+  display: block;
+  color: var(--fe-gold-2);
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -.01em
+}
+
+.fe-highlights span {
+  display: block;
+  margin-top: 4px;
+  color: rgba(248, 243, 232, .62);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase
+}
+
+.fe-journey {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 34px;
+  color: var(--fe-ivory)
+}
+
+.fe-journey li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase
+}
+
+.fe-journey-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--fe-gold-2);
+  flex: none
+}
+
+.fe-journey-line {
+  width: 30px;
+  height: 1px;
+  margin-left: 2px;
+  background: linear-gradient(90deg, rgba(217, 184, 120, .55), rgba(217, 184, 120, .12))
+}
+
+.fe-form-shell {
+  position: relative;
+  z-index: 1
+}
+
+.fe-card {
+  position: relative;
+  transition: transform .45s var(--ease)
+}
+
+.fe-card:hover {
+  transform: translateY(-3px)
+}
+
+.fe-card-accent {
+  position: absolute;
+  top: 13px;
+  right: 18px;
+  z-index: 2;
+  width: 64px;
+  height: 24px;
+  line-height: 0;
+  opacity: .85;
+  pointer-events: none
+}
+
+.fe-card-accent svg {
+  display: block;
+  width: 100%;
+  height: auto
+}
+
+.franchise-form {
+  position: relative;
+  padding: 32px;
+  background: #fff;
+  border: 1px solid rgba(181, 139, 67, .2);
+  border-radius: 24px;
+  box-shadow: 0 40px 90px -56px rgba(0, 0, 0, .9);
+  transition: box-shadow .45s var(--ease)
+}
+
+.fe-card:hover .franchise-form {
+  box-shadow: 0 54px 110px -56px rgba(0, 0, 0, .92)
+}
+
+@media (min-width:1024px) {
+  .fe-inner {
+    grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr);
+    gap: 72px
+  }
+}
+
+@media (max-width:640px) {
+  .section.franchise-enquiry {
+    padding: 72px 0
+  }
+
+  .fe-network-tr {
+    top: -22px;
+    right: -34px;
+    width: 84%;
+    opacity: .72
+  }
+
+  .fe-network-bl {
+    bottom: -18px;
+    left: -26px;
+    width: 60%;
+    opacity: .6
+  }
+
+  .franchise-form {
+    padding: 22px
+  }
+
+  .fe-highlights {
+    max-width: none
+  }
+
+  .fe-journey {
+    gap: 6px
+  }
+
+  .fe-journey li {
+    gap: 6px;
+    font-size: .7rem;
+    letter-spacing: .08em
+  }
+
+  .fe-journey-line {
+    width: 14px;
+    margin-left: 0
+  }
+}
+
+@media (max-width:400px) {
+  .franchise-form .button {
+    gap: 7px;
+    padding: 0 14px;
+    font-size: .86rem
+  }
+
+  .franchise-form .wa-label {
+    white-space: nowrap
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+
+  .fe-node-glow circle,
+  .fe-line-shimmer {
+    animation: none
+  }
+
+  .fe-card,
+  .franchise-form {
+    transition: none
+  }
+
+  .fe-card:hover {
+    transform: none
+  }
+}
+
 .areas h2 {
   font-size: clamp(1.7rem, 3.6vw, 2.5rem);
   color: var(--forest);
@@ -2591,6 +2950,26 @@ section[id] {
   background: #fff
 }
 
+.field textarea {
+  width: 100%;
+  min-height: 112px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1.5px solid var(--line);
+  background: var(--paper);
+  font: inherit;
+  line-height: 1.55;
+  resize: vertical;
+  transition: border-color .25s, box-shadow .25s, background .25s
+}
+
+.field textarea:focus {
+  outline: none;
+  border-color: var(--emerald);
+  box-shadow: 0 0 0 4px rgba(10, 122, 88, .14);
+  background: #fff
+}
+
 .field [aria-invalid='true'] {
   border-color: var(--kumkum);
   background: var(--kumkum-wash)
@@ -2603,7 +2982,8 @@ section[id] {
   margin-top: 6px
 }
 
-.booking-form .button {
+.booking-form .button,
+.franchise-form .button {
   width: 100%
 }
 
@@ -5219,4 +5599,132 @@ h3 {
 
 .ledger-brand small {
   display: none
+}
+
+/* ───────── WhatsApp CTA (Uiverse-inspired) ───────── */
+.whatsapp-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  --wa-line: var(--emerald-ink);
+  --wa-arrow-shift: -7px
+}
+
+.whatsapp-cta .wa-logo {
+  flex: none
+}
+
+.whatsapp-cta .wa-label {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 3px
+}
+
+.whatsapp-cta .wa-label::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--wa-line);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform .25s ease-out
+}
+
+.whatsapp-cta .wa-arrow {
+  flex: none;
+  margin-left: 5px;
+  transform: translateX(var(--wa-arrow-shift));
+  transition: transform .3s var(--ease)
+}
+
+.whatsapp-cta:hover .wa-arrow,
+.whatsapp-cta:focus-visible .wa-arrow {
+  transform: translateX(0)
+}
+
+.whatsapp-cta:hover .wa-label::after,
+.whatsapp-cta:focus-visible .wa-label::after {
+  transform: scaleX(1)
+}
+
+.whatsapp-cta:active .wa-arrow {
+  transform: scale(.88);
+  transition-duration: .12s
+}
+
+/* Champagne gold underline on dark-green backgrounds */
+.button-primary.whatsapp-cta,
+.button-green.whatsapp-cta,
+.mobile-bottom .whatsapp-cta {
+  --wa-line: var(--zari)
+}
+
+/* Text links swap their static underline for the animated one */
+a.whatsapp-cta.text-link,
+a.whatsapp-cta.text-link:hover {
+  gap: 8px
+}
+
+a.whatsapp-cta.text-link {
+  border-bottom: 0;
+  padding-bottom: 0
+}
+
+.form-direct .whatsapp-cta {
+  color: var(--emerald-ink)
+}
+
+.mobile-bottom .whatsapp-cta {
+  gap: 6px;
+  padding: 0 8px;
+  font-size: .8rem;
+  white-space: nowrap
+}
+
+.mobile-bottom .whatsapp-cta .wa-label {
+  padding-bottom: 2px
+}
+
+.mobile-bottom .whatsapp-cta .wa-logo {
+  width: 15px;
+  height: 15px
+}
+
+.mobile-bottom .whatsapp-cta .wa-arrow {
+  display: none
+}
+
+@media (hover:none) {
+  .whatsapp-cta .wa-arrow {
+    transform: none
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+
+  .whatsapp-cta .wa-arrow,
+  .whatsapp-cta .wa-label::after {
+    transition: none
+  }
+}
+
+.franchise-manager {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+  font-size: 14px;
+  color: #526960;
+}
+
+.franchise-manager svg {
+  color: #B58B43;
+  flex-shrink: 0;
+}
+
+.franchise-manager strong {
+  color: #123E30;
+  font-weight: 600;
 }
