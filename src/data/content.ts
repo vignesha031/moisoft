@@ -1,10 +1,12 @@
 export const company = {
   name: 'மொய் Soft', phone: '+919944138970', displayPhone: '+91 99441 38970', whatsapp: '919944138970',
-  email: 'moisoft06@gmail.com', address: '4/449 A, Theni Main Road, Nagamalai, Madurai – 625019, Tamil Nadu.',
-  maps: 'https://share.google/xvHv8orzKZMD3uji4', instagram: 'https://www.instagram.com/moi_soft_/',
+  email: 'moisoft06@gmail.com', address: 'Aravind complex - Frist floor, Mavu Mil bus stop, Theni Main Road, Nagamalai, Madurai – 625019, Tamil Nadu.',
+  maps: 'https://maps.app.goo.gl/g4RwxKmwcvzY7cmZA', instagram: 'https://www.instagram.com/moi_soft_/',
   play: 'https://play.google.com/store/apps/details?id=com.moisoft1.moisoft1',
   site: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.moisoft.in',
 };
+
+
 
 export const navigation = [
   ['hero', 'Home'],
@@ -13,9 +15,12 @@ export const navigation = [
   ['how-it-works', 'How it works'],
   ['app', 'Mobile app'],
   ['leadership', 'Our Leadership'],
+  ['franchises', 'Franchises'],
   ['faq', 'FAQ'],
-  ['contact', 'Contact']
+  ['contact', 'Contact'],
 ] as const;
+
+
 
 export const leadership = [
   {
@@ -129,10 +134,11 @@ export type Franchise = {
 export const franchises: Franchise[] = [
   {
     id: 'franchise-1',
-    name: 'MR.MK',
+    name: 'MR.MK மொய் Soft',
     area: 'கட்டக்கருப்பன்பட்டி',
     manager: 'Gowtham',
-    contact1: ['+919751967137', '+91 97519 67137']
+    contact1: ['+919751967137', '+91 97519 67137'],
+    contact2: ['+916385470047', '+91 63854 70047']
   },
   {
     id: 'franchise-2',
@@ -152,14 +158,14 @@ export const franchises: Franchise[] = [
   },
   {
     id: 'franchise-4',
-    name: 'ஏலம் மணக்கும் போடி',
+    name: 'ஏலம் மணக்கும் போடி மொய் Soft',
     area: 'போடி',
     manager: 'Gowtham',
     contact1: ['+918807646566', '+91 88076 46566']
   },
   {
     id: 'franchise-5',
-    name: 'கருமாத்தூர் லேசர்',
+    name: 'கருமாத்தூர் லேசர் மொய் Soft',
     area: 'கருமாத்தூர்',
     manager: 'Gowtham',
     contact1: ['+919843939705', '+91 98439 39705'],
@@ -167,7 +173,7 @@ export const franchises: Franchise[] = [
   },
   {
     id: 'franchise-6',
-    name: 'காரியாபட்டி',
+    name: 'காரியாபட்டி மொய் Soft',
     area: 'காரியாபட்டி',
     manager: 'Gowtham',
     contact1: ['+918610576031', '+91 86105 76031'],

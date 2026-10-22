@@ -625,14 +625,18 @@ export default function Home() {
         )}
 
         {/* SERVICE AREAS */}
-        <section className="section tight areas">
+
+        {/* SERVICE AREAS */}
+        <section id="franchises" className="section tight areas">
           <div className="container areas-inner">
             <div className="areas-intro">
               <span className="eyebrow">எங்கள் கிளைகள்</span>
               <h2>Madurai & Surrounding Regions</h2>
               <p lang="ta" style={{ marginTop: 12 }}>
-                மதுரை மற்றும் சுற்றுவட்டாரப் பகுதிகளில் 10+ மொய் Soft கிளைகள் மூலம் உங்கள் விசேஷங்களுக்கு சேவை வழங்குகிறோம்.
+                மதுரை மற்றும் சுற்றுவட்டாரப் பகுதிகளில் 10+ மொய் Soft
+                கிளைகள் மூலம் உங்கள் விசேஷங்களுக்கு சேவை வழங்குகிறோம்.
               </p>
+
               <p style={{ marginTop: 22 }}>
                 <WhatsAppCTA className="text-link" href={whatsappUrl()}>
                   Check availability on WhatsApp

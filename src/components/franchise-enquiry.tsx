@@ -59,7 +59,7 @@ export function FranchiseEnquiryForm() {
                         id="franchise-phone"
                         type="tel"
                         inputMode="numeric"
-                        placeholder="98765 43210"
+                        placeholder="98765 43000"
                         autoComplete="tel"
                         aria-invalid={!!errors.phone}
                         aria-describedby={errors.phone ? 'franchise-phone-error' : undefined}
