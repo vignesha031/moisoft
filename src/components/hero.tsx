@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
-import { Printer, Search, ShieldCheck, Zap } from 'lucide-react';
+import { Mic, Printer, Search, ShieldCheck, Zap } from 'lucide-react';
 import { company } from '@/data/content';
 
 type Sample = { id: number; name: string; place: string; amount: number };
@@ -92,7 +92,7 @@ export function CounterDemo() {
                     </motion.li>)}
                 </AnimatePresence>
             </ul>
-            <div className="typing-row"><Search size={16} /><span lang="ta">{!mounted ? '' : reduce ? 'பெயர் · ஊர் · தொகை' : Array.from(upcoming.name).slice(0, typed).join('')}</span>{mounted && !reduce && <span className="caret" />}</div>
+            <div className="typing-row"><Search size={16} /><span lang="ta">{!mounted ? '' : reduce ? 'பெயர் · ஊர் · தொகை' : Array.from(upcoming.name).slice(0, typed).join('')}</span>{mounted && !reduce && <span className="caret" />}<Mic size={16} className="search-mic" aria-hidden="true" /></div>
         </div>
         <div className="printer" aria-hidden="true">
             <div className="printer-body"><span><Printer size={14} style={{ verticalAlign: '-2px', marginRight: 6 }} />Thermal print Receipt</span><i /></div>

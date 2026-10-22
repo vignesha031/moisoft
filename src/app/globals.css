@@ -796,6 +796,11 @@ section[id] {
   min-height: 42px
 }
 
+.search-mic {
+  margin-left: auto;
+  opacity: .7
+}
+
 .caret {
   display: inline-block;
   width: 2px;
