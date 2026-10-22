@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
-import { Mic, Printer, Search, ShieldCheck, Zap } from 'lucide-react';
+import { Mic, Printer, Search, Zap } from 'lucide-react';
 import { company } from '@/data/content';
 
 type Sample = { id: number; name: string; place: string; amount: number };
@@ -63,7 +63,7 @@ export function CounterDemo() {
     const [mounted, setMounted] = useState(false);
     const upcoming = make(next);
     const chars = Array.from(upcoming.name);
-    useEffect(() => { setMounted(true); setStamp(new Date()); }, []);
+    useEffect(() => { const t = setTimeout(() => { setMounted(true); setStamp(new Date()); }, 0); return () => clearTimeout(t); }, []);
     useEffect(() => {
         if (reduce) return;
         if (typed < chars.length) { const t = setTimeout(() => setTyped(typed + 1), typed === 0 ? 700 : 110); return () => clearTimeout(t); }

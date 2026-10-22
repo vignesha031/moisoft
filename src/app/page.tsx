@@ -7,7 +7,7 @@ import {
   Phone, Instagram, Check, Film, Play, Zap, Calculator,
   ListTree, Award, Smartphone, Users, ListChecks, Search,
   CloudUpload, Languages, Monitor, BookOpen, FileText,
-  Printer, CalendarHeart
+  ShieldCheck, CalendarHeart
 } from 'lucide-react';
 
 import {
@@ -26,6 +26,7 @@ import { Steps } from '@/components/steps';
 import { AppPhone } from '@/components/app-phone';
 import { BookingForm } from '@/components/booking';
 import { FranchiseEnquiryForm } from '@/components/franchise-enquiry';
+import { FranchiseCard } from '@/components/franchise-card';
 import {
   FranchiseNetworkTop,
   FranchiseNetworkBottom,
@@ -36,7 +37,10 @@ import { Analytics } from '@/components/analytics';
 
 const whyIcons = { Zap, Calculator, ListTree, Award, Smartphone, Users } as const;
 const appIcons = { ListChecks, Search, CloudUpload, Languages } as const;
-const serviceIcons = [Monitor, BookOpen, MapPin, FileText, Printer];
+const serviceIcons = [Monitor, BookOpen, MapPin, FileText, ShieldCheck];
+const SHOW_HOW_IT_WORKS = false;
+const SHOW_WHY_US = false;
+const SHOW_INSTAGRAM = false;
 
 function Heading({
   eyebrow, title, description, center = false
@@ -229,9 +233,7 @@ export default function Home() {
 
                     {print && (
                       <div className="cta-row">
-                        <WhatsAppCTA className="text-link" href={whatsappUrl()}>
-                          Get a printing quote
-                        </WhatsAppCTA>
+
                       </div>
                     )}
                   </Reveal>
@@ -242,6 +244,7 @@ export default function Home() {
         </section>
 
         {/* HOW IT WORKS */}
+        {SHOW_HOW_IT_WORKS && (
         <section id="how-it-works" className="section tight" style={{ background: '#fff' }}>
           <div className="container">
             <Reveal>
@@ -254,8 +257,10 @@ export default function Home() {
             <Steps />
           </div>
         </section>
+        )}
 
         {/* WHY US */}
+        {SHOW_WHY_US && (
         <section id="why-us" className="section dark">
           <div className="container">
             <Reveal>
@@ -300,6 +305,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        )}
 
         {/* EVENTS */}
         <section id="events" className="section">
@@ -527,6 +533,7 @@ export default function Home() {
         </section>
 
         {/* INSTAGRAM */}
+        {SHOW_INSTAGRAM && (
         <section id="instagram" className="section" style={{ paddingTop: 0 }}>
           <div className="container">
             <div className="split-heading">
@@ -586,6 +593,7 @@ export default function Home() {
             </p>
           </div>
         </section>
+        )}
 
         {/* REVIEWS */}
         {reviews.length > 0 && (
@@ -610,8 +618,6 @@ export default function Home() {
         )}
 
         {/* SERVICE AREAS */}
-
-        {/* SERVICE AREAS */}
         <section id="franchises" className="section tight areas">
           <div className="container areas-inner">
             <div className="areas-intro">
@@ -632,42 +638,7 @@ export default function Home() {
 
             <div className="franchise-grid">
               {franchises.map(f => (
-                <article className="franchise-card" key={f.id}>
-                  <h3 className="franchise-name">{f.name}</h3>
-
-                  <p className="franchise-area">
-                    <MapPin size={13} />
-                    {f.area}
-                  </p>
-
-                  <p className="franchise-manager">
-                    <span>Manager:</span>
-                    <strong>{f.manager ?? 'Gowtham'}</strong>
-                  </p>
-
-                  <div className="franchise-phones">
-                    {f.contact1 || f.contact2 ? (
-                      <>
-                        {f.contact1 && (
-                          <a href={`tel:${f.contact1[0]}`}>
-                            <Phone size={13} />
-                            {f.contact1[1]}
-                          </a>
-                        )}
-                        {f.contact2 && (
-                          <a href={`tel:${f.contact2[0]}`}>
-                            <Phone size={13} />
-                            {f.contact2[1]}
-                          </a>
-                        )}
-                      </>
-                    ) : (
-                      <span className="franchise-pending">
-                        Contact details coming soon
-                      </span>
-                    )}
-                  </div>
-                </article>
+                <FranchiseCard key={f.id} franchise={f} />
               ))}
             </div>
           </div>
@@ -901,17 +872,17 @@ export default function Home() {
 
             <div className="col">
               <strong>Stay connected</strong>
-              <a href={company.instagram} target="_blank" rel="noopener noreferrer">
-                Instagram <ArrowUpRight size={15} />
+              <a className="footer-connect-link" href={company.instagram} target="_blank" rel="noopener noreferrer">
+                <Instagram size={18} aria-hidden="true" /> Instagram <ArrowUpRight size={15} />
               </a>
-              <a href={company.play} target="_blank" rel="noopener noreferrer">
-                Google Play <ArrowUpRight size={15} />
+              <a className="footer-connect-link" href={company.play} target="_blank" rel="noopener noreferrer">
+                <Smartphone size={18} aria-hidden="true" /> Google Play <ArrowUpRight size={15} />
               </a>
-              <a href={company.maps} target="_blank" rel="noopener noreferrer">
-                Google Maps <ArrowUpRight size={15} />
+              <a className="footer-connect-link" href={company.maps} target="_blank" rel="noopener noreferrer">
+                <MapPin size={18} aria-hidden="true" /> Google Maps <ArrowUpRight size={15} />
               </a>
-              <a href={`mailto:${company.email}`}>
-                {company.email}
+              <a className="footer-connect-link" href={`mailto:${company.email}`}>
+                <Mail size={18} aria-hidden="true" /> {company.email}
               </a>
             </div>
           </div>

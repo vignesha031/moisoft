@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { useReducedMotion } from 'motion/react';
-import { Search, Smartphone, CloudUpload } from 'lucide-react';
+import { Search, CloudUpload } from 'lucide-react';
 const rows = [['க. முத்து', 'மதுரை', '₹2,001'], ['முருகேசன்', 'மதுரை', '₹2,501'], ['ராஜா & குடும்பம்', 'தேனி', '₹5,001'], ['செல்வராஜ்', 'திண்டுக்கல்', '₹1,001']];
 const query = 'முத்து';
 export function AppPhone() {

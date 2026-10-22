@@ -53,10 +53,10 @@ export const media = { hero: '', story: '/images/story/story.jpg', video: '/imag
 export const reviews: { name: string; location: string; functionType: string; text: string }[] = [];
 export const services = [
   ['Computerized மொய்  entry', 'கம்ப்யூட்டர் மொய் பதிவு', 'உங்கள் இல்ல விசேஷங்களில், மொய் விவரங்களை கணினி மூலம் பதிவு செய்ய உதவுகிறோம்.'],
-  ['Old notebook management', 'பழைய நோட்டுக்கு புதிய ஒழுங்கு', 'கையில் எழுதிய மொய் விவரங்களை ஊர் வாரியாக ஒழுங்குபடுத்தலாம்.'],
-  ['Village & route sorting', 'ஊர் வாரியாக. வழி வாரியாக.', 'பத்திரிக்கை கொடுக்க வசதியாக, ஊர் விவரங்களை Route வாரியாக பிரிக்கலாம்.'],
-  ['மொய்  reports & records', 'கணக்குகள் ஒரே இடத்தில்', 'செய்த மொய், வாங்கிய மொய் விவரங்களை தெளிவாகப் பார்க்க உதவும் பதிவுகள்.'],
-  ['Invitation printing', 'விசேஷத்தின் முதல் அழைப்பு', 'உங்கள் தேவைக்கேற்ற பத்திரிக்கை அச்சிடுதல் பற்றி எங்களிடம் கேளுங்கள்.'],
+  ['Old notebook management', 'பழைய நோட்டுக்கு புதிய ஒழுங்கு', 'கையால் எழுதப்பட்ட மற்றும் பழைய மொய் நோட்டு விவரங்களைக் கம்ப்யூட்டர் பதிவு செய்து, டிஜிட்டல் முறையில் பயன்படுத்தும் வசதியை வழங்குகிறோம்.'],
+  ['Village & route sorting', 'நேரம் மிச்சம், பத்திரிக்கை எதுவும் விடுபடாது', 'செய்த மொய் விவரங்களை ஏற்றி, ஊர்வாரியாகப் பிரித்து ஒவ்வொரு உறவினருக்கும் பத்திரிக்கை சென்றடைவதை உறுதி செய்ய உதவும்.'],
+  ['மொய்  reports & records', 'கணக்குகள் ஒரே இடத்தில்', ' செய்த மொய் மற்றும் வந்த மொய் விவரங்களை ஒப்பிட்டு, புதிய பதிவுகள் மற்றும் பெண்டிங் விவரங்கள் அனைத்தையும் ஒரே இடத்தில் எளிதாக நிர்வகிக்கலாம்.'],
+  ['Secure OTP Verification', 'OTP பாதுகாப்பு சரிபார்ப்பு', 'மொய் ரசீது வழங்கப்பட்ட பிறகு, மொய் விவரங்களை நீக்க முடியாது. OTP மூலம் சரிபார்த்த பிறகே திருத்தங்களை மேற்கொள்ளலாம்.'],
 ];
 export const faqs = [
   ['மொய் Soft என்ன சேவை வழங்குகிறது?', 'திருமணம் மற்றும் குடும்ப விசேஷங்களுக்கு கம்ப்யூட்டர் மொய் பதிவு, பழைய நோட்டு மேலாண்மை, ஊர் வாரியான பட்டியல் மற்றும் பத்திரிக்கை அச்சிடுதல் சேவைகள் வழங்கப்படுகின்றன.'],
@@ -68,7 +68,7 @@ export const faqs = [
 ];
 
 export const phones = { office: [['+919626410555', '+91 96264 10555'], ['+919626420555', '+91 96264 20555']], team: [['P. Devi', '+919944138970', '+91 99441 38970'], ['M. Mahalakshmi', '+919384729550', '+91 93847 29550'], ['G. Selvakumar', '+919894024970', '+91 98940 24970']] } as const;
-export const serviceTags = [['High-speed typists', 'Thermal slip print'], ['Careful digitisation', 'Digital notebook'], ['Route intelligence', 'Invitation list'], ['Same-day tally', 'Reconciliation'], ['Tamil typography', 'Gold foil finish']] as const;
+export const serviceTags = [['High-speed typists', 'Thermal slip print', 'Whatsapp notifications'], ['Careful digitisation', 'Digital notebook'], ['Route intelligence', 'Invitation list'], ['Same-day tally', 'Reconciliation'], ['OTP Protected', 'Secure Modifications']] as const;
 export const events = [
   [
     'திருமண விழா',
@@ -118,98 +118,103 @@ export const areas = ['Madurai', 'Theni', 'Dindigul', 'Virudhunagar', 'Sivaganga
  * A card with no contact1/contact2 renders as a placeholder and shows no links.
  */
 
+
 export type Franchise = {
   id: string;
   name: string;
   area: string;
   manager: string;
+  degree?: string;
   contact1?: [tel: string, display: string];
   contact2?: [tel: string, display: string];
 };
 
-
-
-
-
 export const franchises: Franchise[] = [
   {
-    id: 'franchise-1',
-    name: 'MR.MK மொய் Soft',
-    area: 'கட்டக்கருப்பன்பட்டி',
-    manager: 'Gowtham',
-    contact1: ['+919751967137', '+91 97519 67137'],
-    contact2: ['+916385470047', '+91 63854 70047']
-  },
-  {
-    id: 'franchise-2',
-    name: 'Smart செல்வா மொய் Soft',
-    area: 'கருப்பாயூரணி (பாண்டிகோவில்)',
-    manager: 'Gowtham',
-    contact1: ['+917094909462', '+91 70949 09462'],
-    contact2: ['+916385470047', '+91 63854 70047']
+    id: 'franchise-10',
+    name: 'ஸ்ரீ அம்மன் மொய் Soft',
+    area: 'விருவீடு',
+    manager: 'B  DHANALAKSHMI',
+    degree: 'B.A',
+    contact1: ['+918807486654', '+91 88074 86654'],
+    contact2: ['+919585321025', '+91 95853 21025'],
   },
   {
     id: 'franchise-3',
     name: 'ஆதிசிவன் மொய் Soft',
     area: 'உசிலம்பட்டி',
-    manager: 'Gowtham',
+    manager: 'P SIVASANKARI',
+    degree: 'B.Com',
     contact1: ['+919159842273', '+91 91598 42273'],
-    contact2: ['+919585324266', '+91 95853 24266']
+    contact2: ['+919585324266', '+91 95853 24266'],
   },
   {
-    id: 'franchise-4',
-    name: 'ஏலம் மணக்கும் போடி மொய் Soft',
-    area: 'போடி',
-    manager: 'Gowtham',
-    contact1: ['+918807646566', '+91 88076 46566']
+    id: 'franchise-1',
+    name: 'MR.MK மொய் Soft',
+    area: 'கட்டக்கருப்பன்பட்டி',
+    manager: 'M MANOJ',
+    degree: 'B.A',
+    contact1: ['+919751967137', '+91 97519 67137'],
+    contact2: ['+916385470047', '+91 63854 70047'],
   },
   {
-    id: 'franchise-5',
-    name: 'கருமாத்தூர் லேசர் மொய் Soft',
-    area: 'கருமாத்தூர்',
-    manager: 'Gowtham',
-    contact1: ['+919843939705', '+91 98439 39705'],
-    contact2: ['+917708779821', '+91 77087 79821']
+    id: 'franchise-2',
+    name: 'Smart செல்வா மொய் Soft',
+    area: 'கருப்பாயூரணி',
+    manager: 'SELVA',
+    degree: 'B.Sc',
+    contact1: ['+917094909462', '+91 70949 09462'],
+    contact2: ['+916385470047', '+91 63854 70047'],
   },
   {
-    id: 'franchise-6',
-    name: 'காரியாபட்டி மொய் Soft',
-    area: 'காரியாபட்டி',
-    manager: 'Gowtham',
-    contact1: ['+918610576031', '+91 86105 76031'],
-    contact2: ['+918838060904', '+91 88380 60904']
+    id: 'franchise-8',
+    name: 'நண்பன் மொய் Soft',
+    area: 'செக்கானூரணி',
+    manager: 'S YUVARAJ , K PRASANTH , A VASANTH',
+    contact1: ['+919597992002', '+91 95979 92002'],
+    contact2: ['+919751062471', '+91 97510 62471'],
+  },
+  {
+    id: 'franchise-9',
+    name: 'ஜனா மொய் Soft',
+    area: 'மம்பட்டிபட்டி',
+    manager: 'JANA KUMARESAN',
+    degree: 'B.A',
+    contact1: ['+919787832191', '+91 97878 32191'],
+    contact2: ['+919445978910', '+91 94459 78910'],
   },
   {
     id: 'franchise-7',
     name: 'சோழன் மொய் Soft',
     area: 'அணைப்பட்டி',
-    manager: 'Gowtham',
+    manager: 'M SARAVANAN',
+    degree: 'B.Com',
     contact1: ['+917200851024', '+91 72008 51024'],
-    contact2: ['+917200861024', '+91 72008 61024']
+    contact2: ['+917200861024', '+91 72008 61024'],
   },
   {
-    id: 'franchise-8',
-    name: 'நண்பன் மொய் Soft',
-    area: 'விக்கிரமங்கலம்',
-    manager: 'Gowtham',
-    contact1: ['+919597992002', '+91 95979 92002'],
-    contact2: ['+919751062471', '+91 97510 62471']
+    id: 'franchise-6',
+    name: 'காரியாபட்டி மொய் Soft',
+    area: 'காரியாபட்டி',
+    manager: 'RANJITH SINGH , SUNDRAMOORTHI',
+    contact1: ['+918610576031', '+91 86105 76031'],
+    contact2: ['+918838060904', '+91 88380 60904'],
   },
   {
-    id: 'franchise-9',
-    name: 'மம்பட்டிபட்டி ஜனா மொய் Soft',
-    area: 'மம்பட்டிபட்டி',
-    manager: 'Gowtham',
-    contact1: ['+919787832191', '+91 97878 32191'],
-    contact2: ['+919445978910', '+91 94459 78910']
+    id: 'franchise-5',
+    name: 'லேசர் மொய் Soft',
+    area: 'கருமாத்தூர்',
+    manager: 'LASER  PANDI',
+    degree: 'MCA',
+    contact1: ['+919843939705', '+91 98439 39705'],
+    contact2: ['+917708779821', '+91 77087 79821'],
   },
   {
-    id: 'franchise-10',
-    name: 'ஸ்ரீ அம்மன் மொய் Soft',
-    area: 'விருவீடு',
-    manager: 'Gowtham',
-    contact1: ['+918807486654', '+91 88074 86654'],
-    contact2: ['+919585321025', '+91 95853 21025']
-  }
+    id: 'franchise-4',
+    name: 'ஏலம் மணக்கும் போடி மொய் Soft',
+    area: 'போடி',
+    manager: 'G RANJAN',
+    degree: 'DME',
+    contact1: ['+918807646566', '+91 88076 46566'],
+  },
 ];
-
