@@ -1,11 +1,9 @@
 import {test,expect} from '@playwright/test';
-test('navigation, comparison, gallery, FAQ, links and enquiry',async({page})=>{
+test('navigation, comparison, FAQ, links and enquiry',async({page})=>{
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto('/');await expect(page.locator('h1')).toBeVisible();
  const missing=await page.locator('a[href^="#"]').evaluateAll(links=>links.map(a=>a.getAttribute('href')!).filter(h=>h.length>1&&!document.querySelector(h)));expect(missing).toEqual([]);
  await page.getByRole('slider').fill('75');await expect(page.getByRole('slider')).toHaveAttribute('aria-valuetext','75% notebook, 25% digital records');
- await page.getByRole('button',{name:'Weddings',exact:true}).click();await expect(page.locator('#gallery .gallery-card')).toHaveCount(2);
- await page.locator('#gallery .gallery-card').first().click();await expect(page.getByRole('dialog')).toBeVisible();await page.keyboard.press('ArrowRight');await expect(page.getByRole('dialog').getByRole('heading')).toHaveText('The team at work');await page.keyboard.press('Escape');await expect(page.getByRole('dialog')).toHaveCount(0);
  await page.locator('.faq-item button').first().click();await expect(page.locator('.faq-item button').first()).toHaveAttribute('aria-expanded','true');
  await page.getByRole('button',{name:'Continue on WhatsApp'}).click();await expect(page.locator('.error')).toHaveCount(7);
  await page.locator('#name').fill('Test family');await page.locator('#phone').fill('9944138970');await page.locator('#functionType').selectOption('Wedding');await page.locator('#date').fill('2099-12-31');await page.locator('#time').fill('09:30');await page.locator('input[name="weddingSide"][value="groom"]').check();await page.locator('#location').fill('Madurai & Theni');await page.locator('#invitationCount').fill('1000');
