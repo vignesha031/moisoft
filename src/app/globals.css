@@ -364,6 +364,7 @@ section[id] {
   font-size: .92rem;
   font-weight: 600;
   color: rgba(255, 255, 255, .78);
+  white-space: nowrap;
   transition: background .25s, color .25s
 }
 
@@ -3792,7 +3793,7 @@ section[id] {
   }
 }
 
-@media (min-width:1024px) {
+@media (min-width:1280px) {
   .desktop-nav {
     display: flex
   }
@@ -3806,7 +3807,9 @@ section[id] {
   .mobile-nav-actions {
     display: none
   }
+}
 
+@media (min-width:1024px) {
   .hero-grid {
     grid-template-columns: 1.05fr .95fr;
     gap: 40px

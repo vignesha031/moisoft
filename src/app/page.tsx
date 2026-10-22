@@ -24,7 +24,6 @@ import { Comparison } from '@/components/comparison';
 import { CounterDemo } from '@/components/hero';
 import { Steps } from '@/components/steps';
 import { AppPhone } from '@/components/app-phone';
-import { Gallery } from '@/components/gallery';
 import { BookingForm } from '@/components/booking';
 import { FranchiseEnquiryForm } from '@/components/franchise-enquiry';
 import {
@@ -327,20 +326,6 @@ export default function Home() {
                 </Reveal>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* GALLERY */}
-        <section id="gallery" className="section" style={{ paddingTop: 0 }}>
-          <div className="container">
-            <Reveal>
-              <Heading
-                eyebrow="விசேஷ தருணங்கள்"
-                title="பல குடும்பங்களின் முக்கிய விசேஷங்களில் மொய் Soft!"
-                description="8000+ functions. One trusted service."
-              />
-            </Reveal>
-            <Gallery />
           </div>
         </section>
 
