@@ -7,10 +7,10 @@ test('navigation, comparison, gallery, FAQ, links and enquiry',async({page})=>{
  await page.getByRole('button',{name:'Weddings',exact:true}).click();await expect(page.locator('#gallery .gallery-card')).toHaveCount(2);
  await page.locator('#gallery .gallery-card').first().click();await expect(page.getByRole('dialog')).toBeVisible();await page.keyboard.press('ArrowRight');await expect(page.getByRole('dialog').getByRole('heading')).toHaveText('The team at work');await page.keyboard.press('Escape');await expect(page.getByRole('dialog')).toHaveCount(0);
  await page.locator('.faq-item button').first().click();await expect(page.locator('.faq-item button').first()).toHaveAttribute('aria-expanded','true');
- await page.getByRole('button',{name:'Continue on WhatsApp'}).click();await expect(page.locator('.error')).toHaveCount(5);
- await page.locator('#name').fill('Test family');await page.locator('#phone').fill('9944138970');await page.locator('#functionType').selectOption('Wedding');await page.locator('#date').fill('2099-12-31');await page.locator('#location').fill('Madurai & Theni');
+ await page.getByRole('button',{name:'Continue on WhatsApp'}).click();await expect(page.locator('.error')).toHaveCount(7);
+ await page.locator('#name').fill('Test family');await page.locator('#phone').fill('9944138970');await page.locator('#functionType').selectOption('Wedding');await page.locator('#date').fill('2099-12-31');await page.locator('#time').fill('09:30');await page.locator('input[name="weddingSide"][value="groom"]').check();await page.locator('#location').fill('Madurai & Theni');await page.locator('#invitationCount').fill('1000');
  await page.route('https://wa.me/**',route=>route.fulfill({status:200,body:'Prepared WhatsApp handoff — test intercepted, nothing sent.'}));
- await page.getByRole('button',{name:'Continue on WhatsApp'}).click();await page.waitForURL('https://wa.me/**');expect(new URL(page.url()).searchParams.get('text')).toContain('Madurai & Theni');expect(errors).toEqual([]);
+ await page.getByRole('button',{name:'Continue on WhatsApp'}).click();await page.waitForURL('https://wa.me/**');const enquiry=new URL(page.url()).searchParams.get('text')!;expect(enquiry).toContain('Madurai & Theni');expect(enquiry).toContain('Muhurtam / Event Time: 9:30 AM');expect(enquiry).toContain('Wedding Side: மாப்பிள்ளை வீட்டார்');expect(enquiry).toContain('Invitation Count: 1,000');expect(errors).toEqual([]);
 });
 test('responsive layout, equal leadership cards and reduced motion',async({page})=>{
  await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/');

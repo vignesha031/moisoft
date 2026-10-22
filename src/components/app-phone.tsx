@@ -14,12 +14,15 @@ export function AppPhone() {
         <div className="app-chip b" aria-hidden="true"><CloudUpload size={16} />Cloud backup</div>
         <div className="phone" role="img" aria-label="Illustrative mock-up of the மொய் Soft Android app with a total, a search box and a list of sample மொய்  records.">
             <div className="phone-screen"><span className="phone-camera" />
-                <div className="phone-head"><small>Madurai Wedding</small><strong>மொய் <span className="zari">Soft</span></strong></div>
+                <div className="phone-head">
+                    <small>Madurai Wedding</small>
+                    <strong>மொய் <span className="zari">Soft</span></strong>
+                </div>
                 <div className="phone-total"><small>மொத்த வரவு</small><b>₹ 8,45,500</b></div>
                 <div className="phone-search"><Search size={15} /><span lang="ta">{q || 'பெயர் அல்லது ஊர் தேடுங்கள்'}</span></div>
                 <ul className="phone-list">{shown.slice(0, 4).map((r, i) => <li key={r[0]} className={q && i === 0 ? 'hit' : ''}><span><b lang="ta">{r[0]}</b><small lang="ta">{r[1]}</small></span><strong>{r[2]}</strong></li>)}</ul>
             </div>
         </div>
-        <span className="phone-illustrative"><Smartphone size={12} style={{ verticalAlign: '-2px' }} /> Illustrative screen · sample data</span>
+
     </div>;
 }

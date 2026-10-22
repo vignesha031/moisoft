@@ -956,7 +956,7 @@ section[id] {
 
 .slip-meta-date {
   align-items: center;
-  padding: 0 6px;
+  padding-right: 6px;
   text-align: center
 }
 
@@ -3221,6 +3221,81 @@ section[id] {
   font-size: .82rem;
   font-weight: 600;
   margin-top: 6px
+}
+
+.field .field-hint {
+  margin-top: 6px;
+  font-size: .76rem;
+  line-height: 1.4;
+  color: var(--mute)
+}
+
+.wedding-side {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0
+}
+
+.field legend {
+  display: block;
+  padding: 0;
+  margin-bottom: 6px;
+  font-weight: 700;
+  font-size: .88rem;
+  color: var(--forest)
+}
+
+.field legend span {
+  color: var(--kumkum)
+}
+
+.field .radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px
+}
+
+.field .radio-option {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+  font-size: .84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color .25s, background .25s, box-shadow .25s
+}
+
+.field .radio-option:hover {
+  border-color: var(--emerald)
+}
+
+.field .radio-option:has(input:checked) {
+  border-color: var(--emerald);
+  background: rgba(10, 122, 88, .08)
+}
+
+.field .radio-option:has(input:focus-visible) {
+  box-shadow: 0 0 0 4px rgba(10, 122, 88, .14)
+}
+
+.field .radio-option input {
+  width: 16px;
+  height: 16px;
+  min-height: 0;
+  flex: none;
+  padding: 0;
+  margin: 0;
+  accent-color: var(--emerald)
+}
+
+.field .radio-option span {
+  color: var(--ink)
 }
 
 .booking-form .button,
@@ -5687,7 +5762,7 @@ h3 {
   }
 
   .comparison-experience .compare-stage {
-    height: 534px
+    height: 600px
   }
 
   .scene-label {
@@ -5858,6 +5933,17 @@ h3 {
   .paper-note {
     font-size: .6rem
   }
+
+  /* Mobile comparison image enhancement */
+  @media (max-width: 700px) {
+
+    .notebook-photo,
+    .digital-photo {
+      transform: scale(1.2);
+      transform-origin: center;
+    }
+  }
+
 }
 
 /* Keep the digital identity and total visible in the initial split view. */
@@ -6011,4 +6097,120 @@ a.whatsapp-cta.text-link {
 
 #franchises {
   scroll-margin-top: 100px;
+}
+
+.booking-form {
+  padding: 20px 22px;
+}
+
+.booking-form .form-heading {
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.booking-form .form-heading strong {
+  font-size: 1.08rem;
+}
+
+.booking-form .form-heading small {
+  font-size: .8rem;
+  line-height: 1.35;
+}
+
+.booking-form .form-grid {
+  gap: 8px 14px;
+  margin-bottom: 12px;
+}
+
+.booking-form .form-grid>* {
+  min-width: 0;
+}
+
+.booking-form .field label,
+.booking-form .field legend {
+  margin-bottom: 3px;
+  font-size: .86rem;
+  line-height: 1.3;
+  overflow-wrap: break-word;
+}
+
+.booking-form .field input,
+.booking-form .field select {
+  min-height: 44px;
+  padding: 0 12px;
+}
+
+.booking-form .field .field-hint {
+  margin-top: 3px;
+  font-size: .76rem;
+  line-height: 1.3;
+}
+
+.booking-form .error {
+  margin-top: 3px;
+  font-size: .76rem;
+  line-height: 1.3;
+}
+
+.booking-form .field .radio-group {
+  gap: 4px;
+}
+
+.booking-form .field .radio-option {
+  min-height: 34px;
+  margin-bottom: 0;
+  padding: 0 10px;
+  gap: 8px;
+  font-size: .82rem;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+}
+
+.booking-form .field .radio-option input {
+  width: 15px;
+  height: 15px;
+  min-height: 0;
+  padding: 0;
+}
+
+.booking-form .whatsapp-cta {
+  min-height: 44px;
+}
+
+.booking-form .form-note {
+  margin-top: 6px;
+  font-size: .78rem;
+  line-height: 1.4;
+}
+
+.booking-form .form-direct {
+  gap: 6px 14px;
+  margin-top: 8px;
+  padding-top: 8px;
+  font-size: .82rem;
+}
+
+@media (max-width:640px) {
+  .booking-form {
+    padding: 18px;
+  }
+
+  .booking-form .field input,
+  .booking-form .field select {
+    min-height: 46px;
+  }
+
+  .booking-form .field .radio-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .booking-form .field .radio-option {
+    min-height: 40px;
+    flex: 1 1 auto;
+  }
+
+  .booking-form .form-grid {
+    gap: 9px;
+  }
 }

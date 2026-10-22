@@ -107,7 +107,7 @@ export default function Home() {
             <div>
               <span className="hero-badge">
                 <span className="pulse" />
-                மதுரையின் நம்பகமான கணினி மொய் சேவை · 2019 முதல்
+                மதுரையின் நம்பகமான கணினி மொய் சேவை 2019 முதல்
               </span>
 
               <h1 lang="ta">

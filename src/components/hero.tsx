@@ -9,9 +9,9 @@ type Sample = { id: number; name: string; place: string; amount: number };
 
 
 const pool: [string, string, number][] = [
-    ['க. முருகன் – மீனாட்சி', 'மதுரை', 2001],
+    ['தினேஷ் ராஜா – கீர்த்தனா', 'வேலூர்', 4001],
     ['ரா. செல்வம் – லட்சுமி', 'தேனி', 5001],
-    ['ச. ராஜேஷ் – பிரியா', 'திண்டுக்கல்', 1001],
+    ['சி. ஜோசப் விஜய் – சங்கீதா', 'சென்னை', 10001],
     ['மு. கார்த்திக் – கவிதா', 'சிவகங்கை', 501],
     ['சத்யா – சுபா', 'திருப்பத்தூர்', 5001],
     ['மகேஷ் – அபி', 'இராமநாதபுரம்', 2001],
@@ -33,7 +33,7 @@ const EVENT = {
     contact: '+91 9003480578',
 };
 const TYPIST = 'Aswin R';
-const OCCUPATIONS = ['விவசாயம்', 'வணிகம்', 'ஆசிரியர்', 'சொந்தத் தொழில்', 'அரசு பணி'];
+const OCCUPATIONS = ['விவசாயம்', 'வணிகம்', 'முதலமைச்சர்', 'சொந்தத் தொழில்', 'அரசு பணி'];
 const PHONES = ['+91 98652 41077', '+91 94431 58206', '+91 97865 33914', '+91 90031 77452'];
 const DENOMS = [500, 200, 100, 50, 20, 10, 5, 2, 1];
 
@@ -80,7 +80,7 @@ export function CounterDemo() {
     const contributorPhone = PHONES[(latest.id + 1) % PHONES.length];
     return <div className="demo" role="img" aria-label="Illustrative demo of the மொய் Soft counter: names are typed in, the running total grows and a detailed thermal receipt is printed for each guest.">
         <div className="demo-glow" aria-hidden="true" />
-        <div className="float-chip chip-a" aria-hidden="true"><ShieldCheck size={18} />Checked totals</div>
+
         <div className="float-chip chip-b" aria-hidden="true"><Zap size={18} />Slip in seconds</div>
         <div className="screen" aria-hidden="true">
             <div className="screen-bar"><i /><i /><i /><span>மொய் Soft · Live counter</span><em><span className="pulse" />Live</em></div>
