@@ -7,7 +7,7 @@ import {
   Phone, Instagram, Check, Film, Play, Zap, Calculator,
   ListTree, Award, Smartphone, Users, ListChecks, Search,
   CloudUpload, Languages, Monitor, BookOpen, FileText,
-  ShieldCheck, CalendarHeart
+  ShieldCheck
 } from 'lucide-react';
 
 import {
@@ -319,15 +319,18 @@ export default function Home() {
             </Reveal>
 
             <div className="events">
-              {events.map(([ta, en, copy], i) => (
+              {events.map(([ta, en, image], i) => (
                 <Reveal key={en} delay={(i % 3) * 0.06}>
                   <a className="event" href="#booking">
-                    <div>
-                      <h3 lang="ta">{ta}</h3>
-                      <small>{en}</small>
+                    <Media src={image} alt={`AI-generated illustration for ${en}`} className="event-image" />
+                    <span className="event-number" aria-hidden="true">0{i + 1}</span>
+                    <div className="event-caption">
+                      <div className="event-heading">
+                        <h3 lang="ta">{ta}</h3>
+                        <small>{en}</small>
+                      </div>
+                      <span className="event-arrow" aria-hidden="true"><ArrowUpRight size={22} /></span>
                     </div>
-                    <CalendarHeart size={26} />
-                    <p lang="ta">{copy}</p>
                   </a>
                 </Reveal>
               ))}

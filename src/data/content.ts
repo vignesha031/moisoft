@@ -70,32 +70,12 @@ export const faqs = [
 export const phones = { office: [['+919626410555', '+91 96264 10555'], ['+919626420555', '+91 96264 20555']], team: [['P. Devi', '+919944138970', '+91 99441 38970'], ['M. Mahalakshmi', '+919384729550', '+91 93847 29550'], ['G. Selvakumar', '+919894024970', '+91 98940 24970']] } as const;
 export const serviceTags = [['High-speed typists', 'Thermal slip print', 'Whatsapp notifications'], ['Careful digitisation', 'Digital notebook'], ['Route intelligence', 'Invitation list'], ['Same-day tally', 'Reconciliation'], ['OTP Protected', 'Secure Modifications']] as const;
 export const events = [
-  [
-    'திருமண விழா',
-    'Wedding Ceremony',
-    'திருமண விழாவில் வருகை தரும் உறவினர்கள் மற்றும் நண்பர்களின் மொய் வரவுகளை விரைவாகவும் துல்லியமாகவும் பதிவு செய்து, முழுமையான கணக்கு விவரங்களை வழங்குதல்.'
-  ],
-  [
-    'காதணி விழா',
-    'Ear Piercing Ceremony',
-    'குழந்தைகளின் காதணி விழாவில் தாய்மாமன், உறவினர்கள் மற்றும் நண்பர்கள் வழங்கும் மொய் மற்றும் அன்பளிப்புகளை முறையாகப் பதிவு செய்தல்.'
-  ],
-  ['இல்ல விழா | வசந்த விழா', 'Home Function | Vasantha Vizha', 'இல்ல விழா மற்றும் வசந்த விழாக்களில் உறவினர்கள் மற்றும் விருந்தினர்கள் வழங்கும் மொய் வரவுகளை துல்லியமாகப் பதிவு செய்து, தெளிவான கணக்கு அறிக்கைகளை வழங்குதல்.'],
-  [
-    'புதுமனை புகுவிழா',
-    'Housewarming Ceremony',
-    'புதிய இல்லத்தின் மகிழ்ச்சியான தொடக்கத்தில் உறவினர்கள் மற்றும் நண்பர்கள் வழங்கும் மொய் மற்றும் அன்பளிப்புகளை எளிமையாகவும் துல்லியமாகவும் பதிவு செய்தல்.'
-  ],
-  [
-    'பூப்புனித நீராட்டு விழா',
-    'Puberty Ceremony',
-    'பாரம்பரிய பூப்புனித நீராட்டு விழாவில் தாய்மாமன், பங்காளிகள் மற்றும் உறவினர்கள் வழங்கும் மொய் வரவுகளை தனித்தனியாக வகைப்படுத்தி, முறையான கணக்கு விவரங்களை வழங்குதல்.'
-  ],
-  [
-    'முதல் திருவிருந்து ஏற்பு விழா',
-    'First Holy Communion',
-    'முதல் திருவிருந்து ஏற்பு விழாவின் சிறப்பான தருணத்தில் உறவினர்கள் மற்றும் நண்பர்கள் வழங்கும் அன்பளிப்புகளை முறையாகப் பதிவு செய்து, எளிதான கணக்கு நிர்வாகத்தை வழங்குதல்.'
-  ]
+  ['திருமண விழா', 'Wedding Ceremony', '/images/events/wedding.webp'],
+  ['காதணி விழா', 'Ear Piercing Ceremony', '/images/events/ear-piercing.webp'],
+  ['இல்ல விழா | வசந்த விழா', 'Home Function | Vasantha Vizha', '/images/events/vasantha-vizha.webp'],
+  ['புதுமனை புகுவிழா', 'Housewarming Ceremony', '/images/events/housewarming.webp'],
+  ['பூப்புனித நீராட்டு விழா', 'Puberty Ceremony', '/images/events/puberty-ceremony.webp'],
+  ['முதல் திருவிருந்து ஏற்பு விழா', 'First Holy Communion', '/images/events/first-communion.webp'],
 ] as const;
 export const whyUs = [
   ['வேகமான மொய் பதிவு', 'Fast entry', 'நீண்ட வரிசைகள் இல்லாமல், நிமிடத்திற்கு பல பதிவுகள் செய்யும் அனுபவம் வாய்ந்த டைப்பிஸ்ட்டுகள்.', 'Zap'],
