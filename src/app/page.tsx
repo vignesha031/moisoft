@@ -1,10 +1,11 @@
 
 import { existsSync } from 'node:fs';
 import path from 'node:path';
+import Image from 'next/image';
 
 import {
   ArrowUpRight, ArrowRight, MapPin, Mail,
-  Phone, Instagram, Check, Film, Play, Zap, Calculator,
+  Phone, Instagram, Check, Film, Zap, Calculator,
   ListTree, Award, Smartphone, Users, ListChecks, Search,
   CloudUpload, Languages, Monitor, BookOpen, FileText,
   ShieldCheck
@@ -369,12 +370,13 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Play size={26} fill="currentColor" />
-                <span>
-                  <small>GET IT ON</small>
-                  <strong>Google Play</strong>
-                </span>
-                <ArrowUpRight size={20} />
+                <Image
+                  src="/images/google-play-badge.png"
+                  alt="Get it on Google Play"
+                  width={646}
+                  height={250}
+                  className="google-play-badge"
+                />
               </a>
 
               <p className="app-download-note">
@@ -738,11 +740,11 @@ export default function Home() {
                 <p><Check size={20} />No payment needed to enquire</p>
               </div>
 
-              <a href={`tel:${company.phone}`} className="booking-phone">
+              <a href={`tel:${phones.team[1][1]}`} className="booking-phone">
                 <Phone size={26} />
                 <span>
                   <small>Or give us a call</small>
-                  {company.displayPhone}
+                  {phones.team[1][2]}
                 </span>
               </a>
             </Reveal>
@@ -776,20 +778,14 @@ export default function Home() {
               </a>
 
               <details className="office-details">
-                <summary>Office lines & coordinators</summary>
-
-                {phones.office.map(([t, d]) => (
-                  <p key={t}>
-                    Office: <a href={`tel:${t}`}>{d}</a>
-                  </p>
-                ))}
-
-                {phones.team.map(([n, t, d]) => (
-                  <p key={t}>
-                    {n}: <a href={`tel:${t}`}>{d}</a>
+                <summary>Office lines</summary>
+                {phones.office.map(([tel, display]) => (
+                  <p key={tel}>
+                    Office: <a href={`tel:${tel}`}>{display}</a>
                   </p>
                 ))}
               </details>
+
             </div>
 
             <div className="map-card">
@@ -869,17 +865,17 @@ export default function Home() {
               <strong>Services</strong>
               <span>Computerized மொய்  entry</span>
               <span>Old notebook management</span>
-              <span>Village & route sorting</span>
-              <span>Invitation printing</span>
+              <span>Route-wise invitation</span>
+              {/* <span>Invitation printing</span> */}
             </div>
 
             <div className="col">
               <strong>Stay connected</strong>
+              <a className="footer-connect-link" href={company.play} target="_blank" rel="noopener noreferrer">
+                <Smartphone size={18} aria-hidden="true" />(Mobile App) Google Play <ArrowUpRight size={15} />
+              </a>
               <a className="footer-connect-link" href={company.instagram} target="_blank" rel="noopener noreferrer">
                 <Instagram size={18} aria-hidden="true" /> Instagram <ArrowUpRight size={15} />
-              </a>
-              <a className="footer-connect-link" href={company.play} target="_blank" rel="noopener noreferrer">
-                <Smartphone size={18} aria-hidden="true" /> Google Play <ArrowUpRight size={15} />
               </a>
               <a className="footer-connect-link" href={company.maps} target="_blank" rel="noopener noreferrer">
                 <MapPin size={18} aria-hidden="true" /> Google Maps <ArrowUpRight size={15} />
