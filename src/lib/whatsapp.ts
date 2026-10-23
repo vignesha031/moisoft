@@ -48,18 +48,8 @@ export function whatsappUrl(data?: Enquiry) {
     return `https://wa.me/${company.whatsapp}?text=${encodeURIComponent(text)}`;
 }
 
-export type FranchiseEnquiry = { name: string; phone: string; location: string; message?: string };
-
-export function franchiseWhatsappUrl(data: FranchiseEnquiry) {
-    const text = [
-        'MOI SOFT – NEW FRANCHISE ENQUIRY',
-        '',
-        `Name: ${data.name}`,
-        `Mobile: ${data.phone}`,
-        `Preferred Location: ${data.location}`,
-        `Message: ${data.message?.trim() || '—'}`,
-        '',
-        'I am interested in learning more about becoming a MoiSoft franchise partner. Please contact me with further details.',
-    ].join('\n');
+export function franchiseWhatsappUrl() {
+    const text =
+        'வணக்கம் மொய் Soft, உங்கள் Franchise வாய்ப்பு மற்றும் இணையும் முறை பற்றி மேலும் தெரிந்துகொள்ள விரும்புகிறேன்.';
     return `https://wa.me/${company.whatsapp}?text=${encodeURIComponent(text)}`;
 }

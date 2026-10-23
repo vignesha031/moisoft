@@ -25,13 +25,8 @@ import { CounterDemo } from '@/components/hero';
 import { Steps } from '@/components/steps';
 import { AppPhone } from '@/components/app-phone';
 import { BookingForm } from '@/components/booking';
-import { FranchiseEnquiryForm } from '@/components/franchise-enquiry';
+import { FranchiseOpportunity } from '@/components/franchise-opportunity';
 import { FranchiseCard } from '@/components/franchise-card';
-import {
-  FranchiseNetworkTop,
-  FranchiseNetworkBottom,
-  FranchiseCardAccent
-} from '@/components/franchise-network';
 import { FAQ } from '@/components/faq';
 import { Analytics } from '@/components/analytics';
 
@@ -392,16 +387,7 @@ export default function Home() {
               <Heading
                 eyebrow="நேரடி செயல்விளக்கம்"
                 title="மொய் Soft எப்படி வேலை செய்கிறது?"
-                description="Meet the service behind the screen."
               />
-              <p lang="ta">
-                கணினி மொய் பதிவு எப்படி நடைபெறுகிறது என்பதை அறிய எங்களை தொடர்பு கொள்ளுங்கள்.
-              </p>
-              <p style={{ marginTop: 22 }}>
-                <WhatsAppCTA className="text-link" href={whatsappUrl()}>
-                  Ask for a demonstration
-                </WhatsAppCTA>
-              </p>
             </Reveal>
 
             <div className="video-frame">
@@ -649,61 +635,7 @@ export default function Home() {
 
 
         {/* FRANCHISE PARTNERSHIP */}
-        <section id="franchise-enquiry" className="section franchise-enquiry">
-          <div className="fe-network fe-network-tr">
-            <FranchiseNetworkTop />
-          </div>
-          <div className="fe-network fe-network-bl">
-            <FranchiseNetworkBottom />
-          </div>
-
-          <div className="container fe-inner">
-            <Reveal className="fe-showcase">
-              <span className="fe-eyebrow">மொய்SOFT PARTNER NETWORK</span>
-              <h2 className="fe-title">
-                <span className="fe-title-line">Grow Your Business.</span>
-                <span className="fe-title-line">
-                  Partner With <em>மொய்Soft</em>.
-                </span>
-              </h2>
-              <p className="fe-desc">
-                Become part of our growing franchise network and bring professional computerised
-                மொய் services to your region.
-              </p>
-              <p className="fe-statement">Connected by trust. Growing together.</p>
-
-              <ul className="fe-highlights">
-                <li>
-                  <strong>{franchises.length}</strong>
-                  <span>Franchise branches</span>
-                </li>
-                <li>
-                  <strong>Tamil Nadu</strong>
-                  <span>Regional network presence</span>
-                </li>
-              </ul>
-
-              <ol className="fe-journey" aria-label="Partnership journey">
-                {['Enquire', 'Discuss', 'Partner'].map((step, i) => (
-                  <li key={step}>
-                    <span className="fe-journey-dot" aria-hidden="true" />
-                    {step}
-                    {i < 2 && <span className="fe-journey-line" aria-hidden="true" />}
-                  </li>
-                ))}
-              </ol>
-            </Reveal>
-
-            <Reveal delay={0.1} className="fe-form-shell">
-              <div className="fe-card">
-                <span className="fe-card-accent" aria-hidden="true">
-                  <FranchiseCardAccent />
-                </span>
-                <FranchiseEnquiryForm />
-              </div>
-            </Reveal>
-          </div>
-        </section>
+        <FranchiseOpportunity />
 
         {/* FAQ */}
         <section id="faq" className="section">
