@@ -97,7 +97,7 @@ export function CounterDemo() {
         <div className="printer" aria-hidden="true">
             <div className="printer-body"><span><Printer size={14} style={{ verticalAlign: '-2px', marginRight: 6 }} />Thermal print Receipt</span><i /></div>
             <span className="slot" />
-            <div className="slip-wrap"><div className="slip" key={latest.id} style={reduce ? { animation: 'none' } : undefined}>
+            <div className="slip-wrap"><div className="slip" key={latest.id}>
                 <div className="slip-brand">
                     <Image src="/logo-transparent.png" alt="மொய் Soft" width={1807} height={351} className="slip-logo" />
                     <div className="slip-contact-line"><span>www.moisoft.in</span><b>{company.displayPhone}</b></div>

@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 import {
   ArrowUpRight, ArrowRight, MapPin, Mail,
-  Phone, Instagram, Check, Film, Zap, Calculator,
+  Phone, Instagram, Check, Zap, Calculator,
   ListTree, Award, Smartphone, Users, ListChecks, Search,
   CloudUpload, Languages, Monitor, BookOpen, FileText,
   ShieldCheck
@@ -30,6 +30,7 @@ import { FranchiseOpportunity } from '@/components/franchise-opportunity';
 import { FranchiseCard } from '@/components/franchise-card';
 import { FAQ } from '@/components/faq';
 import { Analytics } from '@/components/analytics';
+import { DemoVideo } from '@/components/demo-video';
 
 const whyIcons = { Zap, Calculator, ListTree, Award, Smartphone, Users } as const;
 const appIcons = { ListChecks, Search, CloudUpload, Languages } as const;
@@ -174,8 +175,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* COMPARISON */}
-        <section id="comparison" className="section">
+        {/* COMPARISON / ABOUT */}
+        <section id="about" className="section">
           <div className="container">
             <Reveal>
               <Heading
@@ -383,85 +384,30 @@ export default function Home() {
         </section>
 
         {/* VIDEO */}
-        <section id="video" className="section">
-          <div className="container video-grid">
-            <Reveal>
+        <section id="video" className="section demo-section">
+          <div className="container">
+            <Reveal className="demo-heading">
               <Heading
                 eyebrow="நேரடி செயல்விளக்கம்"
                 title="மொய் Soft எப்படி வேலை செய்கிறது?"
               />
             </Reveal>
 
-            <div className="video-frame">
-              {media.video ? (
-                <video
-                  autoPlay muted loop playsInline controls preload="auto"
-                  poster={media.videoPoster || undefined}
-                  aria-label="மொய் Soft service demonstration"
-                >
-                  <source src={media.video} type="video/mp4" />
-                  {media.captions && (
-                    <track
-                      kind="captions"
-                      src={media.captions}
-                      srcLang="ta"
-                      label="Tamil"
-                      default
-                    />
-                  )}
-                </video>
-              ) : (
-                <div className="video-ph">
-                  <Media
-                    src={media.videoPoster}
-                    alt="மொய் Soft demonstration video poster"
-                    label="Demo video"
-                  />
-                  <span className="video-shade" />
-                  <span className="playdot"><Film size={30} /></span>
-                  <strong>Demo video coming soon</strong>
-                  <span>Ask us on WhatsApp for a live demonstration.</span>
-                </div>
-              )}
-            </div>
-          </div>
-        </section>
-
-        {/* ABOUT */}
-        <section id="about" className="section story" style={{ background: '#fff' }}>
-          <div className="container story-grid">
-            <Reveal className="story-art">
-              <Media
-                src={media.story}
-                alt="மொய் Soft team helping with a family function"
-                label="The people behind the service"
-              />
-              <div className="story-badge" lang="ta">
-                மரபோடு இணைந்த தொழில்நுட்பம்.
-                <small>Tradition Meets Technology</small>
+            <Reveal className="demo-media" delay={0.08}>
+              <div className="demo-photo">
+                <Image
+                  src={media.story}
+                  alt="மொய் Soft team assisting at a family function"
+                  fill
+                  sizes="(max-width: 900px) calc(100vw - 32px), 612px"
+                />
               </div>
-            </Reveal>
-
-            <Reveal>
-              <Heading
-                eyebrow="எங்கள் கதை"
-                title="மொய் பாரம்பரியத்திற்கு ஒரு Digital மாற்றம்!"
-                description="Rooted in Tradition. Powered by Technology."
-              />
-              <p lang="ta">
-                தமிழ்நாட்டின் பாரம்பரிய மொய் வழக்கத்தை, நவீன தொழில்நுட்பத்தின்
-                உதவியுடன் எளிமையாக்கும் நோக்கத்துடன் மொய் Soft செயல்படுகிறது.
-              </p>
-              <p lang="ta">
-                மதுரையை மையமாகக் கொண்டு, குடும்ப விழாக்களில் மொய் பதிவு,
-                கணக்கு ஒழுங்குபடுத்துதல் மற்றும் Digital வசதிகளை 2019 முதல்
-                வழங்கி வருகிறோம்.
-              </p>
-              <p style={{ marginTop: 24 }}>
-                <a className="text-link" href="#leadership">
-                  Meet the people behind மொய் Soft <ArrowRight size={18} />
-                </a>
-              </p>
+              <div className="demo-video-shell">
+                <DemoVideo
+                  src={media.video}
+                  label="மொய் Soft service demonstration"
+                />
+              </div>
             </Reveal>
           </div>
         </section>
