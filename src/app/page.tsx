@@ -8,7 +8,7 @@ import {
   Phone, Instagram, Check, Zap, Calculator,
   ListTree, Award, Smartphone, Users, ListChecks, Search,
   CloudUpload, Languages, Monitor, BookOpen, FileText,
-  ShieldCheck
+  UsersRound
 } from 'lucide-react';
 
 import {
@@ -34,7 +34,7 @@ import { DemoVideo } from '@/components/demo-video';
 
 const whyIcons = { Zap, Calculator, ListTree, Award, Smartphone, Users } as const;
 const appIcons = { ListChecks, Search, CloudUpload, Languages } as const;
-const serviceIcons = [Monitor, BookOpen, MapPin, FileText, ShieldCheck];
+const serviceIcons = [Monitor, BookOpen, MapPin, UsersRound, FileText];
 const SHOW_HOW_IT_WORKS = false;
 const SHOW_WHY_US = false;
 const SHOW_INSTAGRAM = false;
@@ -209,12 +209,12 @@ export default function Home() {
               {services.map(([title, tamil, description], i) => {
                 const Icon = serviceIcons[i];
                 const feature = i === 0;
-                const print = i === 4;
+                const plan = i === 3;
 
                 return (
                   <Reveal
                     key={title}
-                    className={`svc ${feature ? 'svc-feature' : ''} ${print ? 'svc-print' : ''}`}
+                    className={`svc ${feature ? 'svc-feature' : ''} ${plan ? 'svc-plan' : ''}`}
                     delay={i * 0.05}
                   >
                     <span className="svc-icon">
@@ -227,12 +227,6 @@ export default function Home() {
                     <div className="tags">
                       {serviceTags[i].map(t => <span key={t}>{t}</span>)}
                     </div>
-
-                    {print && (
-                      <div className="cta-row">
-
-                      </div>
-                    )}
                   </Reveal>
                 );
               })}

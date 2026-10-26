@@ -48,8 +48,26 @@ export function whatsappUrl(data?: Enquiry) {
     return `https://wa.me/${company.whatsapp}?text=${encodeURIComponent(text)}`;
 }
 
-export function franchiseWhatsappUrl() {
-    const text =
-        'வணக்கம் மொய் Soft, உங்கள் Franchise வாய்ப்பு மற்றும் இணையும் முறை பற்றி மேலும் தெரிந்துகொள்ள விரும்புகிறேன்.';
+export type FranchiseEnquiry = {
+    name: string;
+    phone: string;
+    area: string;
+    message?: string;
+};
+
+export function franchiseWhatsappUrl(data?: FranchiseEnquiry) {
+    const message = data?.message?.trim();
+    const text = data
+        ? [
+            'வணக்கம் மொய் Soft,',
+            '',
+            'Franchise வாய்ப்பு பற்றி மேலும் அறிய விரும்புகிறேன்.',
+            '',
+            `பெயர்: ${data.name}`,
+            `மொபைல் எண்: ${data.phone}`,
+            `விரும்பும் பகுதி: ${data.area}`,
+            ...(message ? [`கூடுதல் விவரம்: ${message}`] : []),
+        ].join('\n')
+        : 'வணக்கம் மொய் Soft, உங்கள் Franchise வாய்ப்பு மற்றும் இணையும் முறை பற்றி மேலும் தெரிந்துகொள்ள விரும்புகிறேன்.';
     return `https://wa.me/${company.whatsapp}?text=${encodeURIComponent(text)}`;
 }

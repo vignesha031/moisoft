@@ -35,4 +35,12 @@ export const enquirySchema = z.object({
 });
 export type EnquiryValues = z.infer<typeof enquirySchema>;
 
+export const franchiseEnquirySchema = z.object({
+  name: z.string().trim().min(2, 'பெயரை உள்ளிடவும் (குறைந்தது 2 எழுத்துகள்).').max(80, 'பெயர் 80 எழுத்துகளுக்கு மிகாமல் இருக்க வேண்டும்.'),
+  phone: z.string().trim().regex(/^[6-9]\d{9}$/, 'சரியான 10 இலக்க மொபைல் எண்ணை உள்ளிடவும்.'),
+  area: z.string().trim().min(2, 'விரும்பும் பகுதியை உள்ளிடவும்.').max(120, 'பகுதி பெயர் 120 எழுத்துகளுக்கு மிகாமல் இருக்க வேண்டும்.'),
+  message: z.string().trim().max(500, 'கூடுதல் விவரம் 500 எழுத்துகளுக்கு மிகாமல் இருக்க வேண்டும்.').optional(),
+});
+export type FranchiseEnquiryValues = z.infer<typeof franchiseEnquirySchema>;
+
 

@@ -27,8 +27,8 @@ const fmt = (n: number) => n.toLocaleString('en-IN');
 const START_TOTAL = 845500, START_COUNT = 420;
 
 const EVENT = {
-    family: 'சின்னன் SI Rtd – மகேஸ்வரி',
-    name: 'திருமண வரவேற்பு',
+    family: 'K. சின்னன் SI Rtd – மகேஸ்வரி',
+    name: 'இல்ல திருமண அழைப்பிதழ்',
     venue: 'எலைட் மாஸ்டர் மஹால், மதுரை',
     contact: '+91 9003480578',
 };

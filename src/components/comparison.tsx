@@ -1,10 +1,10 @@
 'use client';
 import { useRef, useState } from 'react';
 import Image from 'next/image';
-import { ArrowLeftRight, BookOpen, Monitor, Check, X } from 'lucide-react';
+import { ArrowLeftRight, BookOpen, Monitor, Check, ShieldCheck, X } from 'lucide-react';
 import { motion } from 'motion/react';
-const old = [['அவசரமாக எழுதுவது', 'கூட்ட நெரிசலில் பெயர்கள் பிழையாகும் வாய்ப்பு அதிகம்.'], ['பெயர் தேடுவதில் சிரமம்', 'நூற்றுக்கணக்கான பக்கங்களை ஒவ்வொன்றாக புரட்ட வேண்டும்.'], ['கூட்டல் பிழைகள்', 'நள்ளிரவில் கணக்கு கூட்டும்போது தொகை வித்தியாசம் வரலாம்.'], ['நோட்டு சேதம்', 'தண்ணீர், மழையில் அழியும் ஆபத்து.']];
-const fresh = [['மொய் ரசீது மற்றும் WhatsApp குறுஞ்செய்தி', 'விருந்தினருக்கு உடனுக்குடன் தகவல்'], ['நொடியில் பெயர் தேடல்', 'மொபைல் app-ல் உறவினர் பெயரை விரைவாக தேடலாம்.'], ['ஊர் / பெயர் வாரியாக மொய் நோட்டு', 'விசேஷம் முடிந்த அன்றே அச்சிட்ட புத்தகம்.'], ['Android app & Cloud backup', 'உங்கள் மொபைலில் பாதுகாப்பாக இருக்கும்.']];
+const old = [['அவசரமாக எழுதுவது', 'கூட்ட நெரிசலில் பெயர்கள் பிழையாகும் வாய்ப்பு அதிகம்.'], ['பெயர் தேடுவதில் சிரமம்', 'நூற்றுக்கணக்கான பக்கங்களை ஒவ்வொன்றாக புரட்ட வேண்டும்.'], ['மொய் தொகைப் பிழைகள்', 'நள்ளிரவில் கணக்கு கூட்டும்போது தொகை வித்தியாசம் வரலாம்.'], ['நோட்டு சேதம்', 'மொய் நோட்டு தொலைந்து போதல் அல்லது கிழிந்து போதல்.']];
+const fresh = [['மொய் ரசீது மற்றும் WhatsApp குறுஞ்செய்தி', 'விருந்தினருக்கு உடனுக்குடன் தகவல்'], ['நொடியில் பெயர் தேடல்', 'மொபைல் app-ல் உறவினர் பெயரை விரைவாக தேடலாம்.'], ['ஊர் / பெயர் வாரியாக மொய் நோட்டு', 'விசேஷம் முடிந்த அன்றே அச்சிட்ட புத்தகம்.'], ['Android app & Cloud backup', 'உங்கள் மொபைலில் பாதுகாப்பாக இருக்கும்.'], ['OTP பாதுகாப்பு சரிபார்ப்பு', 'ரசீது வழங்கிய பிறகு, OTP சரிபார்ப்புடன் மட்டுமே மொய் பதிவுகளைத் திருத்தலாம்.']];
 export function Comparison() {
    const [value, setValue] = useState(50); const stage = useRef<HTMLDivElement>(null);
    function drag(e: React.PointerEvent<HTMLDivElement>) { if (!e.currentTarget.hasPointerCapture(e.pointerId)) return; const r = stage.current!.getBoundingClientRect(); setValue(Math.min(100, Math.max(0, ((e.clientX - r.left) / r.width) * 100))); }
@@ -17,7 +17,7 @@ export function Comparison() {
          </motion.div>
          <motion.div className="vs-col vs-new" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ duration: .7, delay: .12 }}>
             <h3 lang="ta">மொய் Soft · கணினி மொய் மேலாண்மை</h3>
-            <ul>{fresh.map(([a, b]) => <li key={a}><Check size={20} /><span><b lang="ta">{a}</b><span lang="ta">{b}</span></span></li>)}</ul>
+            <ul>{fresh.map(([a, b], i) => <li key={a}>{i === fresh.length - 1 ? <ShieldCheck size={20} /> : <Check size={20} />}<span><b lang="ta">{a}</b><span lang="ta">{b}</span></span></li>)}</ul>
             <p className="vs-verdict" lang="ta">தெளிவான கணக்கு, அமைதியான மனம், கௌரவமான பதிவு.</p>
          </motion.div>
       </div>
