@@ -2380,6 +2380,8 @@ section[id] {
 .demo-photo,
 .demo-video-shell {
   position: relative;
+  width: 100%;
+  max-width: 100%;
   min-width: 0;
   aspect-ratio: 16 / 9;
   border-radius: 18px;
@@ -2406,7 +2408,9 @@ section[id] {
 }
 
 .demo-photo img {
-  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   object-position: center
 }
 
