@@ -1,5 +1,5 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useId, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { MessageCircle,Phone } from 'lucide-react';
@@ -13,7 +13,7 @@ import {
   type EnquiryValues,
 } from '@/lib/validations';
 import { whatsappUrl } from '@/lib/whatsapp';
-import { company } from '@/data/content';
+import { phones } from '@/data/content';
 import {Button} from './ui';
 import { WhatsAppCTA, WhatsAppCtaContent } from './whatsapp-cta';
 
@@ -29,6 +29,66 @@ type FieldOptions = {
   step?: string;
   valueAsNumber?: boolean;
 };
+
+const callNumbers=[phones.team[1],phones.team[0]] as const;
+
+export function CallPicker(){
+ const [open,setOpen]=useState(false);
+ const menuId=useId();
+ const triggerRef=useRef<HTMLButtonElement>(null);
+ const menuRef=useRef<HTMLDivElement>(null);
+
+ useEffect(()=>{
+   if(!open) return;
+   const onPointerDown=(event:PointerEvent)=>{
+     const target=event.target as Node;
+     if(menuRef.current?.contains(target)||triggerRef.current?.contains(target)) return;
+     setOpen(false);
+   };
+   const onKeyDown=(event:KeyboardEvent)=>{
+     if(event.key!=='Escape') return;
+     setOpen(false);
+     triggerRef.current?.focus();
+   };
+   document.addEventListener('pointerdown',onPointerDown);
+   document.addEventListener('keydown',onKeyDown);
+   return ()=>{
+     document.removeEventListener('pointerdown',onPointerDown);
+     document.removeEventListener('keydown',onKeyDown);
+   };
+ },[open]);
+
+ useEffect(()=>{
+   if(!open) return;
+   menuRef.current?.querySelector<HTMLAnchorElement>('a')?.focus();
+ },[open]);
+
+ function onMenuKeyDown(event:ReactKeyboardEvent<HTMLDivElement>){
+   if(!['ArrowDown','ArrowUp','Home','End'].includes(event.key)) return;
+   const items=[...event.currentTarget.querySelectorAll<HTMLAnchorElement>('a')];
+   if(!items.length) return;
+   event.preventDefault();
+   const current=items.indexOf(document.activeElement as HTMLAnchorElement);
+   let next=0;
+   if(event.key==='ArrowDown') next=(current+1)%items.length;
+   else if(event.key==='ArrowUp') next=(current-1+items.length)%items.length;
+   else if(event.key==='End') next=items.length-1;
+   items[next].focus();
+ }
+
+ return <div className="call-picker">
+   <button ref={triggerRef} type="button" className="call-now" aria-haspopup="menu" aria-expanded={open} aria-controls={menuId} onClick={()=>setOpen(value=>!value)}>
+     <Phone size={14}/> Call now
+   </button>
+   {open&&<div ref={menuRef} id={menuId} className="call-picker-menu" role="menu" aria-label="Choose a number to call" onKeyDown={onMenuKeyDown}>
+     <p>Choose a number to call</p>
+     {callNumbers.map(([,tel,display])=><a key={tel} href={`tel:${tel}`} role="menuitem" onClick={()=>setOpen(false)}>
+       <Phone size={15}/>
+       <span>{display}</span>
+     </a>)}
+   </div>}
+ </div>;
+}
 
 export function BookingForm(){
  const { register,handleSubmit,control,resetField,clearErrors,formState:{errors} }=useForm<EnquiryValues>({
@@ -101,6 +161,6 @@ export function BookingForm(){
    </div>
    <Button type="submit" variant="green" className="whatsapp-cta"><WhatsAppCtaContent>Continue on WhatsApp</WhatsAppCtaContent></Button>
    <p className="form-note">Your details open in WhatsApp for you to send. Nothing is stored on this website. An enquiry does not confirm a booking.</p>
-   <div className="form-direct"><span>Prefer to talk directly?</span><WhatsAppCTA href={whatsappUrl()}>Skip form &amp; chat</WhatsAppCTA><a href={`tel:${company.phone}`}><Phone size={14}/> Call now</a></div>
+   <div className="form-direct"><span>Prefer to talk directly?</span><WhatsAppCTA href={whatsappUrl()}>Skip form &amp; chat</WhatsAppCTA><CallPicker/></div>
  </form>;
 }

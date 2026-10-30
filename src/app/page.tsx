@@ -612,13 +612,16 @@ export default function Home() {
                 <p><Check size={20} />No payment needed to enquire</p>
               </div>
 
-              <a href={`tel:${phones.team[1][1]}`} className="booking-phone">
+              <div className="booking-phone">
                 <Phone size={26} />
                 <span>
                   <small>Or give us a call</small>
-                  {phones.team[1][2]}
+                  <span className="booking-phone-numbers">
+                    <a href={`tel:${phones.team[1][1]}`}>{phones.team[1][2]}</a>
+                    <a href={`tel:${phones.team[0][1]}`}>{phones.team[0][2]}</a>
+                  </span>
                 </span>
-              </a>
+              </div>
             </Reveal>
             <BookingForm />
           </div>

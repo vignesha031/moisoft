@@ -29,7 +29,7 @@ const START_TOTAL = 845500, START_COUNT = 420;
 
 const EVENT = {
     family: 'K. சின்னன் SI Rtd – மகேஸ்வரி',
-    name: 'இல்ல திருமண விழா',
+    name: 'இல்ல திருமண விழா (மணமகன்)',
     venue: 'எலைட் மாஸ்டர் மஹால், மதுரை',
     contact: '+91 9003480578',
 };

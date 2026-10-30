@@ -6400,3 +6400,135 @@ a.whatsapp-cta.text-link {
     gap: 9px;
   }
 }
+
+/* ───────── Booking phone links & call picker ───────── */
+.booking-phone-numbers {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 3px
+}
+
+.booking-phone-numbers a {
+  width: fit-content;
+  color: inherit;
+  font: inherit;
+  line-height: 1.2;
+  text-decoration: none
+}
+
+.booking-phone-numbers a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px
+}
+
+.booking-phone-numbers a:focus-visible {
+  outline-offset: 2px
+}
+
+.call-picker {
+  position: relative;
+  display: inline-flex
+}
+
+.form-direct .call-now {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  border: 0;
+  border-bottom: 1.5px solid currentColor;
+  background: none;
+  color: var(--emerald-ink);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer
+}
+
+.call-picker-menu {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 10px);
+  z-index: 60;
+  width: min(280px, calc(100vw - 48px));
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 18px 44px -20px rgba(8, 23, 24, .45)
+}
+
+.call-picker-menu p {
+  margin: 2px 8px 8px;
+  color: var(--mute);
+  font-size: .75rem;
+  font-weight: 700
+}
+
+.call-picker-menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 0;
+  border-radius: 9px;
+  color: var(--ink);
+  font-size: .9rem;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap
+}
+
+.call-picker-menu a:hover {
+  background: var(--zari-wash)
+}
+
+.call-picker-menu a:focus-visible {
+  outline-offset: 0
+}
+
+.call-picker-menu svg {
+  flex: 0 0 auto;
+  color: var(--emerald)
+}
+
+.mobile-bottom .call-picker {
+  min-width: 0
+}
+
+.mobile-bottom .call-now {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 48px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 14px;
+  background: var(--blue-wash);
+  color: var(--blue);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer
+}
+
+.mobile-bottom .call-now svg {
+  flex: 0 0 auto
+}
+
+.mobile-bottom .call-picker-menu a,
+.mobile-bottom .call-picker-menu a:last-child {
+  justify-content: flex-start;
+  min-height: 0;
+  padding: 10px;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--ink);
+  font-size: .9rem
+}
+
+.mobile-bottom .call-picker-menu a:hover {
+  background: var(--zari-wash)
+}
