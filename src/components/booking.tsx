@@ -30,7 +30,7 @@ type FieldOptions = {
   valueAsNumber?: boolean;
 };
 
-const callNumbers=[phones.team[1],phones.team[0]] as const;
+const callNumbers=[phones.team[0],phones.team[1]] as const;
 
 export function CallPicker(){
  const [open,setOpen]=useState(false);

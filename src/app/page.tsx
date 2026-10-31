@@ -617,8 +617,9 @@ export default function Home() {
                 <span>
                   <small>Or give us a call</small>
                   <span className="booking-phone-numbers">
-                    <a href={`tel:${phones.team[1][1]}`}>{phones.team[1][2]}</a>
                     <a href={`tel:${phones.team[0][1]}`}>{phones.team[0][2]}</a>
+                    <a href={`tel:${phones.team[1][1]}`}>{phones.team[1][2]}</a>
+                    
                   </span>
                 </span>
               </div>
